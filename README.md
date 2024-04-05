@@ -31,7 +31,6 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 - [ ]  Aplicar responsividade para as seguintes resoluções: 1920px, 1440px, 768px e 375px.
 
 ### Nível Médio
-### 
 
 - [ ]  Todos os requisitos do nivel fácil.
 
@@ -52,3 +51,17 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 - [ ]  Criar componente de *dropdown* para as opções **Jogos** e **Esportes** do menu de navegação.
 
 - [ ]  Deverá ser executado um *gif* do jogo quando ocorrer o evento de *hover* na capa do trailer
+
+
+### Extra (feito por mim) 
+
+- [ ]  Adicionar autenticação usando Supabase
+
+- [ ]  Adicionar motion para criar efeitos dinâmicos
+
+- [ ]  Adicionar testes em partes importantes com Vitest (api)
+
+
+
+
+
