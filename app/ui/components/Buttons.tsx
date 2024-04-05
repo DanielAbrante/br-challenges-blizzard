@@ -1,11 +1,12 @@
-import { ButtonHTMLAttributes, ReactElement } from "react";
+import Image from "next/image";
+import { ButtonHTMLAttributes, ReactNode, useEffect } from "react";
 
 interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string
 }
 
 interface ButtonWithIconProps extends ButtonsProps {
-  icon: ReactElement
+  icon: string
 }
 
 export function ButtonNormal({ text }: ButtonsProps) {
@@ -18,7 +19,7 @@ export function ButtonNormal({ text }: ButtonsProps) {
 
 export function ButtonOutline({ text }: ButtonsProps) {
   return (
-    <button className="border rounded py-[10px] px-4 text-sm font-medium">
+    <button className="border rounded py-3 px-4 text-sm font-medium w-32">
       {text}
     </button>
   )
@@ -26,8 +27,8 @@ export function ButtonOutline({ text }: ButtonsProps) {
 
 export function ButtonWithIcon({ text, icon }: ButtonWithIconProps) {
   return (
-    <button>
-      {icon}
+    <button className="flex justify-center items-center gap-2 bg-blue rounded py-3 px-4 text-sm font-medium w-32">
+      <Image src={icon} alt="" />
       {text}
     </button>
   )

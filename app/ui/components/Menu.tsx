@@ -16,7 +16,7 @@ export default function Menu() {
         {/* Above Tablet */}
         <div className="hidden md:flex gap-4">
           <ButtonOutline text="Criar conta" />
-          {/* <ButtonWithIcon text="Logar" icon={profileIcon} /> */}
+          <ButtonWithIcon text="Logar" icon={profileIcon} />
         </div>
 
         {/* Above Laptop */}
