@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         'blue': "#00AEFF",
       },
+      fontSize: {
+        'bannerTitle': 'clamp(2.5rem, 1rem + 6vw, 4rem);'
+      }
     },
   },
   plugins: [],

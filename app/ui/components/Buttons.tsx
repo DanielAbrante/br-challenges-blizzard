@@ -9,9 +9,9 @@ interface ButtonWithIconProps extends ButtonsProps {
   icon: string
 }
 
-export function ButtonNormal({ text }: ButtonsProps) {
+export function ButtonNormal({ text, className }: ButtonsProps) {
   return (
-    <button>
+    <button className={`rounded py-3 px-4 text-sm w-32 bg-blue text-white font-semibold ${className}`}>
       {text}
     </button>
   )
