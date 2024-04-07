@@ -61,6 +61,13 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 
 - [ ]  Adicionar testes em partes importantes com Vitest (api)
 
+## What I learned
+
+- TailwindCSS
+- Next.js
+- Configuration with lint (eslint), formatter (prettier), and tailwind 
+- Responsive fonts with clamp propertie
+
 
 
 

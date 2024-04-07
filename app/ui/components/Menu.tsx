@@ -1,18 +1,25 @@
 import Image from "next/image";
 
-import logo from "@/public/assets/logo-blizzard.png";
 import menuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
+import logo from "@/public/assets/logo-blizzard.png";
 import { ButtonOutline, ButtonWithIcon } from "./Buttons";
 import NavLink from "./NavLink";
 
 export default function Menu() {
   return (
-    <div className="border-b-[1px] border-white/10 absolute w-full z-10">
-      <header className="max-w-[1280px] mx-auto flex justify-between p-6 items-center">
+    <div className="absolute z-10 w-full border-b border-white/10">
+      <header className="mx-auto flex max-w-screen-xl items-center justify-between p-6">
         <div className="flex items-center gap-28">
-          <a href="#" className="after:absolute after:w-11 after:h-[2px] after:-bottom-[1.5px] after:bg-blue after:pointer-events-none">
-            <Image src={logo} alt="Blizzard Company" className="max-w-16 sm:max-w-20 xl:max-w-28" />
+          <a
+            href="#"
+            className="after:pointer-events-none after:absolute after:bottom-[-1.5px] after:h-[2px] after:w-11 after:bg-blue"
+          >
+            <Image
+              src={logo}
+              alt="Blizzard Company"
+              className="max-w-16 sm:max-w-20 xl:max-w-28"
+            />
           </a>
 
           {/* Above Laptop */}
@@ -27,15 +34,18 @@ export default function Menu() {
           </nav>
         </div>
 
-
         {/* Above Tablet */}
-        <div className="hidden md:flex gap-4">
+        <div className="hidden gap-4 md:flex">
           <ButtonOutline text="Criar conta" />
           <ButtonWithIcon text="Logar" icon={profileIcon} />
         </div>
 
-        <Image src={menuIcon} alt="Menu icon toggle" className="hover:cursor-pointer xl:hidden" />
+        <Image
+          src={menuIcon}
+          alt="Menu icon toggle"
+          className="hover:cursor-pointer xl:hidden"
+        />
       </header>
     </div>
-  )
+  );
 }

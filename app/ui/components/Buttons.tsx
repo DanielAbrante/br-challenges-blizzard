@@ -1,35 +1,37 @@
 import Image from "next/image";
-import { ButtonHTMLAttributes, ReactNode, useEffect } from "react";
+import { ButtonHTMLAttributes } from "react";
 
 interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string
+  text: string;
 }
 
 interface ButtonWithIconProps extends ButtonsProps {
-  icon: string
+  icon: string;
 }
 
 export function ButtonNormal({ text, className }: ButtonsProps) {
   return (
-    <button className={`rounded py-3 px-4 text-sm w-32 bg-blue text-white font-semibold ${className}`}>
+    <button
+      className={`w-32 rounded bg-blue px-4 py-3 text-sm font-semibold text-white ${className}`}
+    >
       {text}
     </button>
-  )
+  );
 }
 
 export function ButtonOutline({ text }: ButtonsProps) {
   return (
-    <button className="border rounded py-3 px-4 text-sm font-medium w-32">
+    <button className="w-32 rounded border px-4 py-3 text-sm font-medium">
       {text}
     </button>
-  )
+  );
 }
 
 export function ButtonWithIcon({ text, icon }: ButtonWithIconProps) {
   return (
-    <button className="flex justify-center items-center gap-2 bg-blue rounded py-3 px-4 text-sm font-medium w-32">
+    <button className="flex w-32 items-center justify-center gap-2 rounded bg-blue px-4 py-3 text-sm font-medium">
       <Image src={icon} alt="" />
       {text}
     </button>
-  )
+  );
 }
