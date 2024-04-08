@@ -67,6 +67,7 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 - Next.js
 - Configuration with lint (eslint), formatter (prettier), and tailwind 
 - Responsive fonts with clamp propertie
+- Framer Motion
 
 
 
