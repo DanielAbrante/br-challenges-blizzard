@@ -14,6 +14,15 @@ const config: Config = {
       fontSize: {
         bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem);",
       },
+      keyframes: {
+        loading: {
+          from: { width: "0" },
+          to: { width: "100%" },
+        },
+      },
+      animation: {
+        bannerSwitch: "loading 2s linear infinite",
+      },
     },
   },
   plugins: [],

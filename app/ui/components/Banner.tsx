@@ -1,5 +1,5 @@
-import background from "@/public/assets/banner-hero/games/diablo-bg.png";
 import Image from "next/image";
+import BannerBackground from "./BannerBackground";
 import { ButtonNormal } from "./Buttons";
 
 import game_01 from "@/public/assets/banner-hero/icons/game-1.png";
@@ -11,11 +11,7 @@ import game_05 from "@/public/assets/banner-hero/icons/game-5.png";
 export default function Banner() {
   return (
     <section className="relative">
-      <Image
-        src={background}
-        alt="Background"
-        className="absolute top-0 -z-10 size-full object-cover"
-      />
+      <BannerBackground />
 
       <div className="px-6 pt-32">
         <h1 className="max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem]">
@@ -44,8 +40,6 @@ export default function Banner() {
           </li>
         </ul>
       </div>
-
-      <div className="mt-16 h-[3px] w-1/2 bg-blue"></div>
     </section>
   );
 }
