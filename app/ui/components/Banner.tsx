@@ -8,7 +8,7 @@ export default function Banner() {
     <section className="relative">
       <BannerBackground />
 
-      <div className="relative mx-auto max-w-screen-xl bg-slate-500/50 px-6 pb-8 pt-32 md:px-14 lg:px-28">
+      <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:px-28">
         <BannerGameLogo />
 
         <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem] md:mt-28">
