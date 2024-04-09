@@ -1,5 +1,6 @@
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
+import BannerGameLogo from "./BannerGameLogo";
 import { ButtonNormal } from "./Buttons";
 
 export default function Banner() {
@@ -7,8 +8,10 @@ export default function Banner() {
     <section className="relative">
       <BannerBackground />
 
-      <div className="px-6 pb-8 pt-32">
-        <h1 className="max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem]">
+      <div className="relative mx-auto max-w-screen-xl bg-slate-500/50 px-6 pb-8 pt-32 md:px-14 lg:px-28">
+        <BannerGameLogo />
+
+        <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem] md:mt-28">
           Retorne à escuridão com o game Diablo IV
         </h1>
         <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
