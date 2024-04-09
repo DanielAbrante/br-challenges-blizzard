@@ -8,7 +8,7 @@ import game_05 from "@/public/assets/banner-hero/icons/game-5.png";
 
 function BannerGameIcons() {
   return (
-    <ul className="mt-12 flex gap-4">
+    <ul className="mt-12 flex gap-4 lg:flex-col">
       <li>
         <Image
           src={game_01}

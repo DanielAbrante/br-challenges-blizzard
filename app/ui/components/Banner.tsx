@@ -8,17 +8,19 @@ export default function Banner() {
     <section className="relative">
       <BannerBackground />
 
-      <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:px-28">
-        <BannerGameLogo />
+      <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:flex lg:flex-row-reverse lg:justify-end lg:gap-40 lg:px-28 lg:pb-28 lg:pt-44">
+        <div>
+          <BannerGameLogo />
 
-        <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem] md:mt-28">
-          Retorne à escuridão com o game Diablo IV
-        </h1>
-        <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
-          O retorno de Lilith traz uma era de escuridão e sofrimento{" "}
-        </p>
+          <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem] ">
+            Retorne à escuridão com o game Diablo IV
+          </h1>
+          <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
+            O retorno de Lilith traz uma era de escuridão e sofrimento{" "}
+          </p>
 
-        <ButtonNormal className="mt-8" text="Jogue agora" />
+          <ButtonNormal className="mt-8" text="Jogue agora" />
+        </div>
 
         <BannerGameIcons />
       </div>

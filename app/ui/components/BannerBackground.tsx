@@ -29,7 +29,7 @@ export default function BannerBackground() {
   useEffect(() => {
     animate(
       scope.current,
-      { width: "100%" },
+      { width: "100vw" },
       { duration: 3, repeat: Infinity, ease: "linear" },
     );
   }, [animate, scope]);
