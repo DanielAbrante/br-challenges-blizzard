@@ -21,12 +21,15 @@ const config: Config = {
         grayLight: "#E5E5E5",
       },
       fontSize: {
-        bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem);",
+        bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem)",
+      },
+      padding: {
+        galleryHeader: "clamp(3.5625rem, 3.1377rem + 1.8123vw, 5.3125rem)",
       },
       gridTemplateColumns: {
         smallGrid: "repeat(2, minmax(156px, 1fr))",
         mediumGrid: "repeat(3, minmax(203px, 1fr))",
-        bigGrid: "repeat(4, minmax(280px, 301px))",
+        bigGrid: "repeat(4, 1fr)",
       },
     },
   },
