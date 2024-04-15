@@ -1,7 +1,7 @@
+import { ButtonNormal } from "../Buttons";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import BannerGameLogo from "./BannerGameLogo";
-import { ButtonNormal } from "./Buttons";
 
 export default function Banner() {
   return (
@@ -12,7 +12,7 @@ export default function Banner() {
         <div>
           <BannerGameLogo />
 
-          <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem] ">
+          <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem]">
             Retorne à escuridão com o game Diablo IV
           </h1>
           <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
