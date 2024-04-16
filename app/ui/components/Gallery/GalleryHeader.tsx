@@ -36,7 +36,9 @@ export default function GalleryHeader() {
       </div>
 
       <div className="flex gap-3 pb-2">
-        <Image src={dotsMenuIcon} alt="" />
+        <div className="relative w-2">
+          <Image src={dotsMenuIcon} alt="" fill />
+        </div>
         <a href="#" className="text-sm font-semibold text-blue">
           Ver todos jogos
         </a>
