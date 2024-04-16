@@ -9,7 +9,7 @@ import NavLink from "./NavLink";
 export default function Menu() {
   return (
     <div className="absolute z-10 w-full border-b border-white/10">
-      <header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28">
+      <header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28 desktop:px-0">
         <div className="flex items-center gap-28">
           <a
             href="#"
