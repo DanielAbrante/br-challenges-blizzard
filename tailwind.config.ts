@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         blue: "#00AEFF",
         black: "#020203",
+        black300: "#212428",
         white: "#FFFFFF",
         gray: "#8F9199",
         grayLight: "#E5E5E5",

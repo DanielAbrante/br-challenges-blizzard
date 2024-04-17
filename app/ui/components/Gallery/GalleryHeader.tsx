@@ -9,9 +9,9 @@ export default function GalleryHeader() {
   return (
     <div className="flex items-end justify-between py-galleryHeader">
       {/* Laptop */}
-      <span className="hidden self-start pt-2 font-semibold text-gray laptop:block">
+      <h4 className="hidden self-start pt-2 font-semibold text-gray laptop:block">
         Games
-      </span>
+      </h4>
 
       <h2 className="w-40 text-[1.75rem] font-bold leading-[110%] tablet:text-[2rem]">
         Jogos exclusivos

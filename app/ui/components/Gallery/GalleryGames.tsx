@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 
+import dotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
+import logo from "@/public/assets/logo-blizzard.png";
+
 import { useEffect, useState } from "react";
 import { InterfaceGameList } from "../../types/appInterfaces";
 
@@ -41,6 +44,19 @@ export default function GalleryGames() {
             </p>
           </div>
         ))}
+      <div className="flex flex-col items-center justify-center gap-4 border border-black300">
+        <Image src={logo} alt="Blizzard Company" />
+
+        <div className="flex gap-3">
+          <Image
+            src={dotsMenuIcon}
+            alt=""
+            className="hidden tablet:block tablet:grayscale"
+          />
+
+          <h3 className="text-sm font-semibold">Ver todos jogos</h3>
+        </div>
+      </div>
     </section>
   );
 }
