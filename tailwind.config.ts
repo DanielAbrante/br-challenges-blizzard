@@ -22,6 +22,7 @@ const config: Config = {
         grayLight: "#E5E5E5",
       },
       fontSize: {
+        h2: "clamp(1.75rem, 1.5115rem + 1.0178vw, 2rem)",
         bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem)",
       },
       padding: {
@@ -31,6 +32,9 @@ const config: Config = {
         smallGrid: "repeat(2, minmax(156px, 1fr))",
         mediumGrid: "repeat(3, minmax(203px, 1fr))",
         bigGrid: "repeat(4, 1fr)",
+      },
+      backgroundImage: {
+        footerBackground: "url('/assets/footer-background.png')",
       },
     },
   },

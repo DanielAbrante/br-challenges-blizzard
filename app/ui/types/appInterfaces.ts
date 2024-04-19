@@ -4,3 +4,8 @@ export interface InterfaceGameList {
   logo: string;
   name: string;
 }
+
+export interface InterfaceFooterItem {
+  icon: string;
+  title: string;
+}
