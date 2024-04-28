@@ -27,10 +27,13 @@ export function ButtonOutline({ text }: ButtonsProps) {
   );
 }
 
-export function ButtonWithIcon({ text, icon }: ButtonWithIconProps) {
+export function ButtonWithIcon({ text, icon, className }: ButtonWithIconProps) {
   return (
-    <button className="flex w-32 items-center justify-center gap-2 rounded bg-blue px-4 py-3 text-sm font-medium">
-      <Image src={icon} alt="" />
+    <button
+      className={`flex items-center justify-center gap-2 rounded bg-blue px-4 py-3 text-sm font-medium ${className}`}
+    >
+      {icon && <Image src={icon} alt="" />}
+
       {text}
     </button>
   );

@@ -19,6 +19,7 @@ const config: Config = {
         black300: "#212428",
         white: "#FFFFFF",
         gray: "#8F9199",
+        graySemiLight: "#BCC0CA",
         grayLight: "#E5E5E5",
       },
       fontSize: {
