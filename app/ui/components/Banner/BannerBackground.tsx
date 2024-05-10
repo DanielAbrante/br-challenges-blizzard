@@ -40,21 +40,21 @@ export default function BannerBackground() {
         <Image
           src={backgrounds[0]}
           alt=""
-          className="absolute top-0 -z-10 size-full object-cover"
+          className="absolute top-0 -z-10 size-full object-cover brightness-75"
         />
       )}
       {currentBG === 1 && (
         <Image
           src={backgrounds[1]}
           alt=""
-          className="absolute top-0 -z-10 size-full object-cover"
+          className="absolute top-0 -z-10 size-full object-cover brightness-75"
         />
       )}
       {currentBG === 2 && (
         <Image
           src={backgrounds[2]}
           alt=""
-          className="absolute top-0 -z-10 size-full object-cover"
+          className="absolute top-0 -z-10 size-full object-cover brightness-75"
         />
       )}
 

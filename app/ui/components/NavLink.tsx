@@ -12,13 +12,13 @@ export default function NavLink({ text, href, hasDropDown }: NavLinkProps) {
     <>
       {hasDropDown ? (
         <Link
-          className="flex gap-3 text-sm font-medium after:mt-[3px] after:size-2.5 after:rotate-45 after:border-b-2 after:border-r-2 after:border-white/60"
+          className="flex gap-3 text-sm font-medium after:mt-[3px] after:size-2.5 after:rotate-45 after:border-b-2 after:border-r-2 after:border-white/60 hover:text-blue hover:after:mt-[5px] hover:after:duration-300"
           href={href}
         >
           {text}
         </Link>
       ) : (
-        <Link className="text-sm font-medium" href={href}>
+        <Link className="text-sm font-medium hover:text-blue" href={href}>
           {text}
         </Link>
       )}

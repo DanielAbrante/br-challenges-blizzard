@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import menuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
+import Image from "next/image";
 import { ButtonOutline, ButtonWithIcon } from "./Buttons";
 import NavLink from "./NavLink";
 
@@ -13,12 +12,12 @@ export default function Menu() {
         <div className="flex items-center gap-28">
           <a
             href="#"
-            className="after:pointer-events-none after:absolute after:bottom-[-1.5px] after:h-[2px] after:w-11 after:bg-blue"
+            className="relative after:pointer-events-none after:absolute after:top-[45.5px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full tablet:after:top-[60px]"
           >
             <Image
               src={logo}
               alt="Blizzard Company"
-              className="max-w-16 sm:max-w-20 xl:max-w-28"
+              className="laptop::max-w-28 max-w-16 tablet:max-w-20"
             />
           </a>
 
@@ -35,16 +34,18 @@ export default function Menu() {
         </div>
 
         {/* Above Tablet */}
-        <div className="hidden gap-4 md:flex">
-          <ButtonOutline text="Criar conta" />
-          <ButtonWithIcon text="Logar" icon={profileIcon} />
-        </div>
+        <div className="flex gap-20">
+          <div className="hidden gap-4 md:flex">
+            <ButtonOutline text="Criar conta" />
+            <ButtonWithIcon text="Logar" icon={profileIcon} />
+          </div>
 
-        <Image
-          src={menuIcon}
-          alt="Menu icon toggle"
-          className="hover:cursor-pointer xl:hidden"
-        />
+          <Image
+            src={menuIcon}
+            alt="Menu icon toggle"
+            className="hover:cursor-pointer xl:hidden"
+          />
+        </div>
       </header>
     </div>
   );
