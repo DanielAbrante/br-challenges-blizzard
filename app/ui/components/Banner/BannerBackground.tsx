@@ -15,49 +15,26 @@ export default function BannerBackground() {
   const [currentBG, setCurrentBG] = useState(0);
 
   useEffect(() => {
-    const switchBackground = () => {
-      setTimeout(() => {
-        setCurrentBG(currentBG + 1);
-      }, 3000);
-    };
+    const intervalId = setInterval(() => {
+      setCurrentBG(prevIndex => (prevIndex === backgrounds.length - 1 ? 0 : prevIndex + 1));
+    }, 3000);
 
-    switchBackground();
-
-    if (currentBG === 3) setCurrentBG(0);
-  }, [animate, currentBG, scope]);
-
-  useEffect(() => {
     animate(
       scope.current,
       { width: "100vw" },
       { duration: 3, repeat: Infinity, ease: "linear" },
     );
-  }, [animate, scope]);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <>
-      {currentBG === 0 && (
-        <Image
-          src={backgrounds[0]}
-          alt=""
-          className="absolute top-0 -z-10 size-full object-cover brightness-75"
-        />
-      )}
-      {currentBG === 1 && (
-        <Image
-          src={backgrounds[1]}
-          alt=""
-          className="absolute top-0 -z-10 size-full object-cover brightness-75"
-        />
-      )}
-      {currentBG === 2 && (
-        <Image
-          src={backgrounds[2]}
-          alt=""
-          className="absolute top-0 -z-10 size-full object-cover brightness-75"
-        />
-      )}
-
+      <Image
+        src={backgrounds[currentBG]}
+        alt=""
+        className="absolute top-0 -z-10 size-full object-cover brightness-75"
+      />
       <div ref={scope} className="absolute bottom-0 h-[3px] bg-blue"></div>
     </>
   );

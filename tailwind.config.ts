@@ -39,6 +39,14 @@ const config: Config = {
         footerBackground: "url('/assets/footer-background.png')",
         modalBackground: "url('/assets/modal-background.png')"
       },
+      keyframes: {
+        bannerKeyFrame: {
+          '100%': { width: "100%" }
+        }
+      },
+      animation: {
+        bannerAnimation: 'bannerKeyFrame 3s linear infinite'
+      }
     },
   },
   plugins: [],
