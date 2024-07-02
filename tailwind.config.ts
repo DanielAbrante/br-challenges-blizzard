@@ -19,6 +19,7 @@ const config: Config = {
         black300: "#212428",
         white: "#FFFFFF",
         gray: "#8F9199",
+        grayBold: "#363842",
         graySemiLight: "#BCC0CA",
         grayLight: "#E5E5E5",
       },
@@ -36,6 +37,7 @@ const config: Config = {
       },
       backgroundImage: {
         footerBackground: "url('/assets/footer-background.png')",
+        modalBackground: "url('/assets/modal-background.png')"
       },
     },
   },

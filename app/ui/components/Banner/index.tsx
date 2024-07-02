@@ -13,7 +13,7 @@ export default function Banner() {
           <BannerGameLogo />
 
           <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem]">
-            Retorne à escuridão com o game Diablo IV
+            Retorne à escuridão com o game Diablo
           </h1>
           <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
             O retorno de Lilith traz uma era de escuridão e sofrimento{" "}

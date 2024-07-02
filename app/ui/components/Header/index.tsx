@@ -1,11 +1,21 @@
+"use client";
+
 import menuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
-import { ButtonOutline, ButtonWithIcon } from "./Buttons";
-import NavLink from "./NavLink";
+import { useState } from "react";
+import { ButtonOutline, ButtonWithIcon } from "../Buttons";
+import NavLink from "../NavLink";
+import HeaderLoginModal from "./HeaderLoginModal";
 
 export default function Menu() {
+  const [isLoginModalOpened, setIsLoginModalOpened] = useState<boolean>(false);
+
+  function handleClick() {
+    setIsLoginModalOpened(true);
+  }
+
   return (
     <div className="absolute z-10 w-full border-b border-white/10">
       <header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28 desktop:px-0">
@@ -36,7 +46,7 @@ export default function Menu() {
         {/* Above Tablet */}
         <div className="flex gap-20">
           <div className="hidden gap-4 md:flex">
-            <ButtonOutline text="Criar conta" />
+            <ButtonOutline text="Criar conta" onClick={handleClick} />
             <ButtonWithIcon text="Logar" icon={profileIcon} />
           </div>
 
@@ -47,6 +57,10 @@ export default function Menu() {
           />
         </div>
       </header>
+
+      {isLoginModalOpened && (
+        <HeaderLoginModal onClose={() => setIsLoginModalOpened(false)} />
+      )}
     </div>
   );
 }

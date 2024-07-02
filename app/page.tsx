@@ -1,12 +1,12 @@
 import Banner from "./ui/components/Banner";
 import Footer from "./ui/components/Footer";
 import Gallery from "./ui/components/Gallery";
-import Menu from "./ui/components/Menu";
+import Menu from "./ui/components/Header";
 
 export default function Home() {
   return (
     <>
-      <Menu />
+      <Menu/>
       <Banner />
       <Gallery />
       <Footer />

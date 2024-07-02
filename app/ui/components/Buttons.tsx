@@ -19,9 +19,12 @@ export function ButtonNormal({ text, className }: ButtonsProps) {
   );
 }
 
-export function ButtonOutline({ text }: ButtonsProps) {
+export function ButtonOutline({ text, ...props }: ButtonsProps) {
   return (
-    <button className="w-32 rounded px-4 py-3 text-sm font-medium outline outline-1 duration-200 hover:bg-white hover:text-black hover:outline-none">
+    <button
+      {...props}
+      className="w-32 rounded px-4 py-3 text-sm font-medium outline outline-1 duration-200 hover:bg-white hover:text-black hover:outline-none"
+    >
       {text}
     </button>
   );

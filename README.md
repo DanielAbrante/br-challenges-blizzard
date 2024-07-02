@@ -50,16 +50,7 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 
 - [ ]  Criar componente de *dropdown* para as opções **Jogos** e **Esportes** do menu de navegação.
 
-- [ ]  Deverá ser executado um *gif* do jogo quando ocorrer o evento de *hover* na capa do trailer
-
-
-### Extra (feito por mim) 
-
-- [ ]  Adicionar autenticação usando Supabase
-
-- [ ]  Adicionar motion para criar efeitos dinâmicos
-
-- [ ]  Adicionar testes em partes importantes com Vitest (api)
+- [ ]  Deverá ser executado um *gif* do jogo quando ocorrer o evento de *hover* na capa do trailerg
 
 ## What I learned
 
