@@ -4,16 +4,16 @@ import menuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef } from "react";
 import { ButtonOutline, ButtonWithIcon } from "../Buttons";
 import NavLink from "../NavLink";
 import HeaderLoginModal from "./HeaderLoginModal";
 
 export default function Menu() {
-  const [isLoginModalOpened, setIsLoginModalOpened] = useState<boolean>(false);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
 
-  function handleClick() {
-    setIsLoginModalOpened(true);
+  const handleLoginClick = () => {
+    if (dialogRef) dialogRef.current?.showModal();
   }
 
   return (
@@ -46,8 +46,8 @@ export default function Menu() {
         {/* Above Tablet */}
         <div className="flex gap-20">
           <div className="hidden gap-4 md:flex">
-            <ButtonOutline text="Criar conta" onClick={handleClick} />
-            <ButtonWithIcon text="Logar" icon={profileIcon} />
+            <ButtonOutline text="Criar conta" />
+            <ButtonWithIcon text="Logar" icon={profileIcon} onClick={handleLoginClick} />
           </div>
 
           <Image
@@ -58,9 +58,7 @@ export default function Menu() {
         </div>
       </header>
 
-      {isLoginModalOpened && (
-        <HeaderLoginModal onClose={() => setIsLoginModalOpened(false)} />
-      )}
+      <HeaderLoginModal ref={dialogRef} />
     </div>
   );
 }

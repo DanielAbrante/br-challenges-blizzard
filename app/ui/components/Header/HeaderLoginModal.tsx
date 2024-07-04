@@ -4,19 +4,24 @@ import facebookIcon from "@/public/assets/banner-hero/icons/facebook-icon.svg";
 import googleIcon from "@/public/assets/banner-hero/icons/google-icon.svg";
 import battleNetLogo from "@/public/assets/logo-battle-net.png";
 import Image from "next/image";
+import { forwardRef, RefObject } from "react";
 
-interface HeaderLoginModalProps {
-  onClose: any;
-}
+const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
+  const handleCloseModalClick = () => {
+    const dialogRef = ref as RefObject<HTMLDialogElement>;
 
-export default function HeaderLoginModal({ onClose }: HeaderLoginModalProps) {
+    if (dialogRef.current) {
+      dialogRef.current.close();
+    }
+  };
+
   return (
-    <dialog open className="bg-modalBackground bg-cover py-16 px-32">
-      <Image src={closeModalIcon} alt={""} onClick={onClose} className="absolute top-8 right-8 hover:cursor-pointer" />
+    <dialog className="bg-modalBackground py-16 px-32" ref={ref}>
+      <Image src={closeModalIcon} alt={""} className="absolute top-8 right-8 hover:cursor-pointer hover:scale-150" onClick={handleCloseModalClick} />
 
       <div className="flex flex-col items-center">
         <div className="flex justify-center">
-          <Image src={battleNetLogo} alt="" />
+          <Image src={battleNetLogo} alt="battlenet logo" />
         </div>
 
         <form className="my-10">
@@ -44,9 +49,9 @@ export default function HeaderLoginModal({ onClose }: HeaderLoginModalProps) {
           <p className="mt-9"><a href="#" className="hover:brightness-150 text-blue underline">Crie uma conta</a> Battle.net de graça</p>
           <a className="hover:brightness-150 mt-4 text-blue underline" href="#">Não consegue logar?</a>
         </div>
-
       </div>
-
     </dialog>
   );
-}
+})
+
+export default HeaderLoginModal;
