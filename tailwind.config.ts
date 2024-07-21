@@ -41,7 +41,8 @@ const config: Config = {
       },
       keyframes: {
         bannerKeyFrame: {
-          '100%': { width: "100%" }
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
         }
       },
       animation: {
