@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const backgrounds = [diablo, hearthstone, wow];
 
 export default function BannerBackground() {
-  const [currentBG, setCurrentBG] = useState(0);
+  const [currentBG, setCurrentBG] = useState<number>(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {

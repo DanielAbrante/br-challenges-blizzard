@@ -1,9 +1,46 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ButtonNormal } from "../Buttons";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import BannerGameLogo from "./BannerGameLogo";
 
+interface BannersProps {
+  title: string;
+  description: string;
+  isAvailable: boolean;
+}
+
+const banners: BannersProps[] = [
+  {
+    title: "Retorna à escuridão com o game Diablo IV",
+    description: "O retorno de Lilith traz uma era de escuridão e sofrimento",
+    isAvailable: true,
+  },
+  {
+    title: "Novo pacote de expansão de Hearthstone",
+    description: "A Horda e a Aliança se encontraram no Vale Alterac para lutar",
+    isAvailable: false,
+  },
+  {
+    title: "Desbrave as Terras Sombrias em Shadowlands! ",
+    description: "Desbrave as Terras Sombrias em Shadowlands! ",
+    isAvailable: false,
+  },
+]
+
 export default function Banner() {
+  const [bannerIndex, setBannerIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setBannerIndex(bannerIndex => banners.length - 1 === bannerIndex ? 0 : bannerIndex + 1);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section className="relative">
       <BannerBackground />
@@ -13,10 +50,10 @@ export default function Banner() {
           <BannerGameLogo />
 
           <h1 className="mt-12 max-w-72 text-bannerTitle font-bold leading-[110%] sm:max-w-[35rem]">
-            Retorne à escuridão com o game Diablo
+            {banners[bannerIndex].title}
           </h1>
           <p className="mt-4 max-w-72 text-lg sm:max-w-[35rem]">
-            O retorno de Lilith traz uma era de escuridão e sofrimento{" "}
+            {banners[bannerIndex].description}
           </p>
 
           <ButtonNormal className="mt-8" text="Jogue agora" />
