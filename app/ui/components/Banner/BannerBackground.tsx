@@ -26,7 +26,7 @@ export default function BannerBackground() {
       <Image
         src={backgrounds[currentBG]}
         alt=""
-        className="absolute top-0 -z-10 size-full object-cover brightness-75"
+        className="absolute size-full -z-10  object-cover brightness-75 object-top"
       />
       <motion.div key={currentBG} className="absolute bottom-0 h-[3px] bg-blue"
         initial={{ width: 0 }}
