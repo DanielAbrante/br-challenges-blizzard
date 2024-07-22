@@ -3,6 +3,7 @@
 import diablo from "@/public/assets/banner-hero/games/diablo-bg.png";
 import hearthstone from "@/public/assets/banner-hero/games/hearthstone-bg.png";
 import wow from "@/public/assets/banner-hero/games/wow-bg.png";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -27,7 +28,11 @@ export default function BannerBackground() {
         alt=""
         className="absolute top-0 -z-10 size-full object-cover brightness-75"
       />
-      <div key={currentBG} className="absolute bottom-0 h-[3px] bg-blue animate-bannerAnimation"></div>
+      <motion.div key={currentBG} className="absolute bottom-0 h-[3px] bg-blue"
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}>
+      </motion.div>
     </>
   );
 }
