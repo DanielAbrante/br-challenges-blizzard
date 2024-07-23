@@ -9,3 +9,9 @@ export interface InterfaceFooterItem {
   icon: string;
   title: string;
 }
+
+export interface BannersProps {
+  title: string;
+  description: string;
+  isAvailable: boolean;
+}
