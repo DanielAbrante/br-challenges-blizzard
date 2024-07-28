@@ -11,7 +11,10 @@ export interface InterfaceFooterItem {
 }
 
 export interface BannersProps {
+  id: number;
   title: string;
   description: string;
+  gameIcon: string;
+  gameLogo: string;
   isAvailable: boolean;
 }

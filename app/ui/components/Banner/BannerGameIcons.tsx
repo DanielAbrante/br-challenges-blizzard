@@ -13,11 +13,13 @@ function BannerGameIcons() {
         gameIcons.map(gameIcon => (
           <li>
             <Image
+              key={gameIcon.src}
               src={gameIcon}
               alt="game 01"
               className="cursor-pointer grayscale hover:grayscale-0"
             />
           </li>
+
         ))
       }
     </ul>
