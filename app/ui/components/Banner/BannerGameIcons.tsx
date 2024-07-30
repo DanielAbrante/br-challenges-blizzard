@@ -5,18 +5,18 @@ import { BannerContext } from ".";
 import { gameIcons } from "../../data/banner-data";
 
 function BannerGameIcons() {
-  const banner = useContext(BannerContext)
+  const bannerIndex = useContext(BannerContext)
 
   return (
     <ul className="mt-12 flex gap-4 lg:flex-col">
       {
-        gameIcons.map(gameIcon => (
+        gameIcons.map((gameIcon, index) => (
           <li>
             <Image
               key={gameIcon.src}
               src={gameIcon}
               alt="game 01"
-              className="cursor-pointer grayscale hover:grayscale-0"
+              className={`cursor-pointer grayscale hover:grayscale-0 ${index == bannerIndex ? "grayscale-0" : ''}`}
             />
           </li>
 
@@ -24,6 +24,6 @@ function BannerGameIcons() {
       }
     </ul>
   );
-}
+} 
 
 export default BannerGameIcons;
