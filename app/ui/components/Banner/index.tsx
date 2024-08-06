@@ -7,6 +7,7 @@ import { ButtonNormal } from "../Buttons";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import BannerGameLogo from "./BannerGameLogo";
+import BannerTrailer from "./BannerTrailer";
 
 
 export const BannerContext = createContext(0);
@@ -29,17 +30,25 @@ export default function Banner() {
         <BannerBackground />
 
         <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:flex lg:flex-row-reverse lg:justify-end lg:gap-40 lg:px-28 lg:pb-28 lg:pt-44 desktop:px-0 desktop:pt-52 desktop:pb-36 max-h-[45.5rem]">
-          <div>
-            <BannerGameLogo />
+          <div className="flex gap-44">
 
-            <h1 className="mt-12 text-bannerTitle font-bold leading-[110%] sm:max-w-[38rem]">
-              {banners[bannerIndex].title}
-            </h1>
-            <p className="mt-4 text-lg">
-              {banners[bannerIndex].description}
-            </p>
+            <div>
+              <h1 className="mt-12 text-bannerTitle font-bold leading-[110%] sm:max-w-[38rem]">
+                {banners[bannerIndex].title}
+              </h1>
+              <p className="mt-4 text-lg">
+                {banners[bannerIndex].description}
+              </p>
 
-            <ButtonNormal className="mt-8" text="Jogue agora" />
+              <ButtonNormal className="mt-8" text="Jogue agora" />
+            </div>
+
+
+            <div className="hidden md:flex justify-between items-center flex-col">
+              <BannerGameLogo />
+              <BannerTrailer />
+            </div>
+
           </div>
 
           <BannerGameIcons />
