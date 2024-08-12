@@ -29,7 +29,7 @@ export default function Banner() {
 
         <BannerBackground />
 
-        <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:flex lg:flex-row-reverse lg:justify-end lg:gap-40 lg:px-28 lg:pb-28 lg:pt-44 desktop:px-0 desktop:pt-52 desktop:pb-36 max-h-[45.5rem]">
+        <div className="relative mx-auto max-w-screen-xl px-6 pb-8 pt-32 md:px-14 lg:flex lg:flex-row-reverse lg:justify-end lg:gap-40 lg:px-28 lg:pb-28 lg:pt-44 desktop:px-0 max-h-[45.5rem]">
           <div className="flex gap-44">
 
             <div>
@@ -44,8 +44,10 @@ export default function Banner() {
             </div>
 
 
-            <div className="hidden md:flex justify-between items-center flex-col">
-              <BannerGameLogo />
+            <div className="hidden md:flex flex-col py-32 justify-center gap-11">
+              <div className="max-h-36">
+                <BannerGameLogo />
+              </div>
               <BannerTrailer />
             </div>
 

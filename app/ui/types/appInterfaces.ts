@@ -16,5 +16,7 @@ export interface BannersProps {
   description: string;
   gameIcon: string;
   gameLogo: string;
+  gameTrailer: string;
+  gameLogoTrailer: string;
   isAvailable: boolean;
 }

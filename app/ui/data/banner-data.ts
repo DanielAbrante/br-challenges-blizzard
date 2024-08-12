@@ -10,6 +10,15 @@ import gameLogo01 from "@/public/assets/banner-hero/games/diablo-logo.png";
 import gameLogo02 from "@/public/assets/banner-hero/games/hearthstone-logo.png";
 import gameLogo03 from "@/public/assets/banner-hero/games/wow-logo.png";
 
+import diabloTrailer from "@/public/assets/banner-hero/games/diablo-animation.gif"
+import hearthstoneTrailer from "@/public/assets/banner-hero/games/hearthstone-animation.gif"
+import wowTrailer from "@/public/assets/banner-hero/games/wow-animation.gif"
+
+import diabloLogoTrailer from "@/public/assets/banner-hero/games/diablo-animation-cover.png"
+import hearthstoneLogoTrailer from "@/public/assets/banner-hero/games/hearthstone-animation-cover.png"
+import wowLogoTrailer from "@/public/assets/banner-hero/games/wow-animation-cover.png"
+
+
 export const gameIcons = [
   gameIcon01, gameIcon02, gameIcon03, gameIcon04, gameIcon05
 ];
@@ -21,6 +30,8 @@ export const banners: BannersProps[] = [
     description: "O retorno de Lilith traz uma era de escuridão e sofrimento",
     gameIcon: gameIcon01.src,
     gameLogo: gameLogo01.src,
+    gameTrailer: diabloTrailer.src,
+    gameLogoTrailer: diabloLogoTrailer.src,
     isAvailable: true,
   },
   {
@@ -29,6 +40,8 @@ export const banners: BannersProps[] = [
     description: "A Horda e a Aliança se encontraram no Vale Alterac para lutar",
     gameIcon: gameIcon02.src,
     gameLogo: gameLogo02.src,
+    gameTrailer: hearthstoneTrailer.src,
+    gameLogoTrailer: hearthstoneLogoTrailer.src,
     isAvailable: false,
   },
   {
@@ -37,6 +50,8 @@ export const banners: BannersProps[] = [
     description: "O que jaz além do mundo que você conhece?",
     gameIcon: gameIcon03.src,
     gameLogo: gameLogo03.src,
+    gameTrailer: wowTrailer.src,
+    gameLogoTrailer: wowLogoTrailer.src,
     isAvailable: false,
   },
 ];
