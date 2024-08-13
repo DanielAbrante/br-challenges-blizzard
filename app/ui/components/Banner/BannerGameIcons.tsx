@@ -11,11 +11,10 @@ function BannerGameIcons() {
     <ul className="mt-12 flex gap-4 lg:flex-col">
       {
         gameIcons.map((gameIcon, index) => (
-          <li>
+          <li key={index}>
             <Image
-              key={gameIcon.src}
               src={gameIcon}
-              alt="game 01"
+              alt=""
               className={`cursor-pointer grayscale hover:grayscale-0 ${index == bannerIndex ? "grayscale-0" : ''}`}
             />
           </li>
@@ -24,6 +23,6 @@ function BannerGameIcons() {
       }
     </ul>
   );
-} 
+}
 
 export default BannerGameIcons;
