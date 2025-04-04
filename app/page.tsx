@@ -4,12 +4,12 @@ import Gallery from "./ui/components/Gallery";
 import Menu from "./ui/components/Header";
 
 export default function Home() {
-  return (
-    <>
-      <Menu/>
-      <Banner />
-      <Gallery />
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Menu />
+			<Banner />
+			<Gallery />
+			<Footer />
+		</>
+	);
 }

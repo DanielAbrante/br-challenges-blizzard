@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { InterfaceFooterItem } from "../../types/appInterfaces";
+import type { InterfaceFooterItem } from "../../types/appInterfaces";
 
 export default function FooterItem({ icon, title }: InterfaceFooterItem) {
-  return (
-    <li className="flex gap-4 text-lg text-graySemiLight">
-      <Image src={icon} alt="" />
-      {title}
-    </li>
-  );
+	return (
+		<li className="flex gap-4 text-lg text-graySemiLight">
+			<Image src={icon} alt="" />
+			{title}
+		</li>
+	);
 }

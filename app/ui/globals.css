@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  color: #fff;
+	color: #fff;
 }
 
 img {
-  display: block;
+	display: block;
 }
