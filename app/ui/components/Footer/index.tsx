@@ -73,7 +73,7 @@ export default function Footer() {
 					<ButtonWithIcon
 						icon={operatingSystemIcon}
 						text={`Baixar para o ${operatingSystem}`}
-						className="mt-10 px-8 py-3 font-semibold"
+						className="mt-10 w-64 px-8 py-3 font-semibold"
 					/>
 					<div className="mt-10 flex gap-4">
 						<Image src={phoneIcon} alt="" />
