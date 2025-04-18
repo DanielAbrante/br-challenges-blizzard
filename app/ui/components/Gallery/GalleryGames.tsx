@@ -55,7 +55,7 @@ export default function GalleryGames() {
 					</p>
 				</div>
 			))}
-			<div className="flex flex-col items-center justify-center gap-4 border border-black300">
+			<div className="flex h-52 laptop:h-96 tablet:h-72 flex-col items-center justify-center gap-4 border border-black300">
 				<Image src={logo} alt="Blizzard Company" />
 
 				<div className="flex gap-3">
