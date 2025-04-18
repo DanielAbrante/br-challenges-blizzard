@@ -17,21 +17,21 @@ export default function Menu() {
 	};
 
 	return (
-		<div className="absolute z-10 w-full border-b border-white/10">
-			<header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28 desktop:px-0">
+		<div className="absolute z-10 w-full border-white/10 border-b">
+			<header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28 2xl:px-0">
 				<div className="flex items-center gap-28">
 					<a
 						href="#"
-						className="relative after:pointer-events-none after:absolute after:top-[45.5px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full tablet:after:top-[60px]"
+						className="relative after:pointer-events-none after:absolute after:top-[45.5px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full md:after:top-[60px]"
 					>
 						<Image
 							src={logo}
 							alt="Blizzard Company"
-							className="laptop::max-w-28 max-w-16 tablet:max-w-20"
+							className="max-w-16 md:max-w-20 xl::max-w-28"
 						/>
 					</a>
 
-					{/* Above Laptop */}
+					{/* Above xl */}
 					<nav className="hidden xl:block">
 						<ul className="flex gap-8">
 							<NavLink text="Jogos" href="/" hasDropDown />
@@ -43,7 +43,7 @@ export default function Menu() {
 					</nav>
 				</div>
 
-				{/* Above Tablet */}
+				{/* Above md */}
 				<div className="flex gap-20">
 					<div className="hidden gap-4 md:flex">
 						<ButtonOutline text="Criar conta" />

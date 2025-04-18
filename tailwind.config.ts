@@ -9,9 +9,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			screens: {
-				tablet: "768px",
-				laptop: "1440px",
-				desktop: "1920px",
+				xl: "1440px",
+				"2xl": "1920px",
 			},
 			colors: {
 				blue: "#00AEFF",

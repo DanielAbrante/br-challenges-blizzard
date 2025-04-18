@@ -41,28 +41,28 @@ export default function GalleryGames() {
 	}
 
 	return (
-		<section className="grid desktop:grid-cols-xl grid-cols-sm laptop:grid-cols-lg tablet:grid-cols-md justify-center gap-x-4 tablet:gap-x-8 gap-y-6 laptop:gap-y-12 tablet:gap-y-10">
+		<section className="grid grid-cols-sm justify-center gap-x-4 gap-y-6 md:grid-cols-md md:gap-x-8 md:gap-y-10 xl:grid-cols-lg xl:gap-y-12 2xl:grid-cols-xl">
 			{gamesList.map((game) => (
 				<div key={Math.random()}>
-					<div className="relative h-52 laptop:h-96 tablet:h-72">
+					<div className="relative h-52 md:h-72 xl:h-96">
 						<Image src={game.image} alt={game.name} fill />
 					</div>
-					<h3 className="mt-5 tablet:block hidden font-semibold text-lg">
+					<h3 className="mt-5 hidden font-semibold text-lg md:block">
 						{game.name}
 					</h3>
-					<p className="mt-1 tablet:block hidden text-grayLight text-sm">
+					<p className="mt-1 hidden text-grayLight text-sm md:block">
 						{game.category}
 					</p>
 				</div>
 			))}
-			<div className="flex h-52 laptop:h-96 tablet:h-72 flex-col items-center justify-center gap-4 border border-black300">
+			<div className="flex h-52 flex-col items-center justify-center gap-4 border border-black300 md:h-72 xl:h-96">
 				<Image src={logo} alt="Blizzard Company" />
 
 				<div className="flex gap-3">
 					<Image
 						src={dotsMenuIcon}
 						alt=""
-						className="tablet:block hidden tablet:grayscale"
+						className="hidden md:block md:grayscale"
 					/>
 
 					<h3 className="font-semibold text-sm">Ver todos jogos</h3>

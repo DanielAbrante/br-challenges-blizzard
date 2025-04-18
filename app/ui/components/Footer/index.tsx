@@ -54,11 +54,11 @@ export default function Footer() {
 	}, []);
 
 	return (
-		<footer className="h-screen overflow-x-hidden bg-footerBackground bg-cover bg-no-repeat">
-			<div className="mx-auto max-w-[1300px] px-6 pt-16 md:px-14 tablet:flex tablet:pt-24 lg:px-28 laptop:pt-32 desktop:px-0">
+		<footer className="h-screen overflow-x-hidden bg-cover bg-footerBackground bg-no-repeat">
+			<div className="mx-auto max-w-[1300px] px-6 pt-16 md:flex md:px-14 md:pt-24 lg:px-28 xl:pt-32 2xl:px-0">
 				<div className="w-4/5">
 					<Image src={battleNetLogo} alt="battle.net logo" />
-					<h2 className="mt-7 text-h2 font-bold">Baixe agora o battle.net</h2>
+					<h2 className="mt-7 font-bold text-h2">Baixe agora o battle.net</h2>
 					<ul className="mt-7 flex flex-col gap-6">
 						<FooterItem
 							icon={rectangleIcon}
@@ -77,7 +77,7 @@ export default function Footer() {
 					/>
 					<div className="mt-10 flex gap-4">
 						<Image src={phoneIcon} alt="" />
-						<p className="max-w-60 text-sm font-semibold text-grayLight">
+						<p className="max-w-60 font-semibold text-grayLight text-sm">
 							Também disponível como{" "}
 							<a href="#" className="underline">
 								aplicativo móvel
@@ -90,12 +90,12 @@ export default function Footer() {
 					<Image
 						src={appIlustration}
 						alt=""
-						className="absolute left-20 top-0 scale-150 tablet:left-64"
+						className="absolute top-0 left-20 scale-150 md:left-64"
 					/>
 					<Image
 						src={miniAppIlustration}
 						alt=""
-						className="absolute left-16 top-28 tablet:left-64"
+						className="absolute top-28 left-16 md:left-64"
 					/>
 				</div>
 			</div>

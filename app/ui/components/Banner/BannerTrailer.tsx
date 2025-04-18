@@ -23,17 +23,17 @@ export default function BannerTrailer() {
 
 	return (
 		<div className="flex flex-col items-end gap-4">
-			<h4 className="font-semibold text-sm hidden laptop:block">
+			<h4 className="hidden font-semibold text-sm xl:block">
 				ASSISTA O TRAILER
 			</h4>
-			<div className="relative flex justify-center items-center h-[158px] w-full">
+			<div className="relative flex h-[158px] w-full items-center justify-center">
 				{!isPlayingTrailer ? (
 					<>
 						<Image
 							src={banners[bannerIndex].gameLogoTrailer}
 							alt={""}
 							fill
-							className="hidden tablet:block object-cover"
+							className="hidden object-cover md:block"
 							onMouseEnter={playTrailer}
 						/>
 						<Image src={playIcon} alt="" className="absolute" />
@@ -44,7 +44,7 @@ export default function BannerTrailer() {
 						alt={""}
 						unoptimized
 						fill
-						className="hidden tablet:block object-cover"
+						className="hidden object-cover md:block"
 						onMouseLeave={stopTrailer}
 					/>
 				)}
