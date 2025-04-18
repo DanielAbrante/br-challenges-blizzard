@@ -21,36 +21,40 @@ import appIlustration from "@/public/assets/ilustrations/app.png";
 
 import { ButtonWithIcon } from "../Buttons";
 
-const allowedOperatingSystemsList: string[] = ["Linux", "Windows", "Macintosh"];
+type OperatingSystem = "Linux" | "Windows" | "Macintosh";
+
+const allowedOperatingSystemsList: OperatingSystem[] = [
+	"Linux",
+	"Windows",
+	"Macintosh",
+];
+
+const osIconMap: Record<OperatingSystem, string> = {
+	Linux: linuxIcon,
+	Windows: windowsIcon,
+	Macintosh: macosIcon,
+};
 
 export default function Footer() {
 	const [operatingSystem, setOperatingSystem] = useState<string>("");
 	const [operatingSystemIcon, setOperatingSystemIcon] = useState<string>("");
 
 	useEffect(() => {
-		function getUserAgent() {
-			const userAgent = window.navigator.userAgent;
+		function getUserAgentOperatingSystem() {
+			const userAgent = navigator.userAgent;
 
-			allowedOperatingSystemsList.forEach((operatingSystem) => {
-				if (userAgent.indexOf(operatingSystem) !== -1) {
-					setOperatingSystem(operatingSystem);
-
-					switch (operatingSystem) {
-						case "Linux":
-							setOperatingSystemIcon(linuxIcon);
-							break;
-						case "Windows":
-							setOperatingSystemIcon(windowsIcon);
-							break;
-						case "Macintosh":
-							setOperatingSystemIcon(macosIcon);
-							break;
-					}
+			for (const os of allowedOperatingSystemsList) {
+				if (userAgent.includes(os)) {
+					setOperatingSystem(os);
+					setOperatingSystemIcon(osIconMap[os]);
+					return;
 				}
-			});
+			}
+
+			setOperatingSystem("Dispositivo");
 		}
 
-		getUserAgent();
+		getUserAgentOperatingSystem();
 	}, []);
 
 	return (
