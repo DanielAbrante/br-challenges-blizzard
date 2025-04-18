@@ -41,20 +41,16 @@ export default function GalleryGames() {
 	}
 
 	return (
-		<section className="grid grid-cols-smallGrid gap-x-4 gap-y-6 tablet:grid-cols-mediumGrid tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-bigGrid laptop:gap-y-12">
+		<section className="grid desktop:grid-cols-xl grid-cols-sm laptop:grid-cols-lg tablet:grid-cols-md justify-center gap-x-4 tablet:gap-x-8 gap-y-6 laptop:gap-y-12 tablet:gap-y-10">
 			{gamesList.map((game) => (
 				<div key={Math.random()}>
-					<Image
-						src={game.image}
-						width={300}
-						height={412}
-						alt={game.name}
-						className="size-auto"
-					/>
-					<h3 className="mt-5 hidden text-lg font-semibold tablet:block">
+					<div className="relative h-52 laptop:h-96 tablet:h-72">
+						<Image src={game.image} alt={game.name} fill />
+					</div>
+					<h3 className="mt-5 tablet:block hidden font-semibold text-lg">
 						{game.name}
 					</h3>
-					<p className="mt-1 hidden text-sm text-grayLight tablet:block">
+					<p className="mt-1 tablet:block hidden text-grayLight text-sm">
 						{game.category}
 					</p>
 				</div>
@@ -66,10 +62,10 @@ export default function GalleryGames() {
 					<Image
 						src={dotsMenuIcon}
 						alt=""
-						className="hidden tablet:block tablet:grayscale"
+						className="tablet:block hidden tablet:grayscale"
 					/>
 
-					<h3 className="text-sm font-semibold">Ver todos jogos</h3>
+					<h3 className="font-semibold text-sm">Ver todos jogos</h3>
 				</div>
 			</div>
 		</section>

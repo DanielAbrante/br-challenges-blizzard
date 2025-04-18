@@ -31,9 +31,10 @@ const config: Config = {
 				galleryHeader: "clamp(3.5625rem, 3.1377rem + 1.8123vw, 5.3125rem)",
 			},
 			gridTemplateColumns: {
-				smallGrid: "repeat(2, minmax(156px, 1fr))",
-				mediumGrid: "repeat(3, minmax(203px, 1fr))",
-				bigGrid: "repeat(4, 1fr)",
+				sm: "repeat(2, 10rem)",
+				md: "repeat(3, 12.5rem)",
+				lg: "repeat(4, 17.5rem)",
+				xl: "repeat(4, 18.5rem)"
 			},
 			backgroundImage: {
 				footerBackground: "url('/assets/footer-background.png')",
