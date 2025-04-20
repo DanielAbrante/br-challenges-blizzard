@@ -1,7 +1,7 @@
-import Banner from "./ui/components/Banner";
-import Footer from "./ui/components/Footer";
-import Gallery from "./ui/components/Gallery";
-import Menu from "./ui/components/Header";
+import Banner from "./sections/Banner";
+import Footer from "./sections/Footer";
+import Gallery from "./sections/Gallery";
+import Menu from "./sections/Header";
 
 export default function Home() {
 	return (

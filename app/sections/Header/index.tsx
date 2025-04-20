@@ -5,8 +5,8 @@ import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
 import { useRef } from "react";
-import { ButtonOutline, ButtonWithIcon } from "../Buttons";
-import NavLink from "../NavLink";
+import { ButtonOutline, ButtonWithIcon } from "../../components/Buttons";
+import NavLink from "../../components/NavLink";
 import HeaderLoginModal from "./HeaderLoginModal";
 
 export default function Menu() {

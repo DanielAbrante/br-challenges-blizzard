@@ -19,7 +19,7 @@ import phoneIcon from "@/public/assets/banner-hero/icons/phone.svg";
 import miniAppIlustration from "@/public/assets/ilustrations/app-mini.png";
 import appIlustration from "@/public/assets/ilustrations/app.png";
 
-import { ButtonWithIcon } from "../Buttons";
+import { ButtonWithIcon } from "../../components/Buttons";
 
 type OperatingSystem = "Linux" | "Windows" | "Macintosh";
 

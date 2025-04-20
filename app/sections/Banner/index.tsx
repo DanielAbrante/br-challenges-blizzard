@@ -2,8 +2,8 @@
 
 import { createContext, useEffect, useState } from "react";
 
+import { ButtonNormal } from "../../components/Buttons";
 import { banners } from "../../data/banner-data";
-import { ButtonNormal } from "../Buttons";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import BannerGameLogo from "./BannerGameLogo";

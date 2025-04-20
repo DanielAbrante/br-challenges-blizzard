@@ -5,8 +5,8 @@ import dotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 
 import { useEffect, useState } from "react";
+import { LoadingSpinner } from "../../components/LoadingSpinner";
 import type { InterfaceGameList } from "../../types/appInterfaces";
-import { LoadingSpinner } from "../LoadingSpinner";
 
 export default function GalleryGames() {
 	const [gamesList, setGamesList] = useState<InterfaceGameList[]>([]);
