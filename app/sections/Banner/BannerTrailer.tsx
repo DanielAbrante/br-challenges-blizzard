@@ -17,6 +17,7 @@ export default function BannerTrailer() {
 		setIsPlayingTrailer(false);
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		setIsPlayingTrailer(false);
 	}, [bannerIndex]);

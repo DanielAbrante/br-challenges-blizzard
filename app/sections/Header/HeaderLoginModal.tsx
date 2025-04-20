@@ -16,11 +16,11 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 	};
 
 	return (
-		<dialog className="bg-modalBackground py-16 px-32" ref={ref}>
+		<dialog className="bg-modalBackground px-32 py-16" ref={ref}>
 			<Image
 				src={closeModalIcon}
 				alt={""}
-				className="absolute top-8 right-8 hover:cursor-pointer hover:scale-150"
+				className="absolute top-8 right-8 hover:scale-150 hover:cursor-pointer"
 				onClick={handleCloseModalClick}
 			/>
 
@@ -37,7 +37,7 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 								name="email"
 								id="email"
 								placeholder="E-mail ou telefone"
-								className="w-[26.625rem] px-4 py-3 rounded placeholder:text-grayBold placeholder:font-thin"
+								className="w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-grayBold"
 							/>
 						</p>
 
@@ -47,19 +47,22 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 								name="password"
 								id="password"
 								placeholder="Senha"
-								className="w-[26.625rem] px-4 py-3 rounded placeholder:text-grayBold placeholder:font-thin mt-4"
+								className="mt-4 w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-grayBold"
 							/>
 						</p>
 
-						<button className="mt-6 bg-blue text-white w-full py-3 font-semibold rounded">
+						<button
+							type="button"
+							className="mt-6 w-full rounded bg-blue py-3 font-semibold text-white"
+						>
 							Conectar-se
 						</button>
 					</h2>
 				</form>
 
-				<div className="text-white flex flex-col items-center">
+				<div className="flex flex-col items-center text-white">
 					<p>ou conecte-se com</p>
-					<ul className="flex gap-4 mt-4">
+					<ul className="mt-4 flex gap-4">
 						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
 							<Image src={googleIcon} alt="" />
 						</li>
@@ -72,12 +75,12 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 					</ul>
 
 					<p className="mt-9">
-						<a href="#" className="hover:brightness-150 text-blue underline">
+						<a href="#" className="text-blue underline hover:brightness-150">
 							Crie uma conta
 						</a>{" "}
 						Battle.net de graça
 					</p>
-					<a className="hover:brightness-150 mt-4 text-blue underline" href="#">
+					<a className="mt-4 text-blue underline hover:brightness-150" href="#">
 						Não consegue logar?
 					</a>
 				</div>

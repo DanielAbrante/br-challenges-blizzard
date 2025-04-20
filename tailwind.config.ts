@@ -33,7 +33,7 @@ const config: Config = {
 				sm: "repeat(2, 10rem)",
 				md: "repeat(3, 12.5rem)",
 				lg: "repeat(4, 17.5rem)",
-				xl: "repeat(4, 18.5rem)"
+				xl: "repeat(4, 18.5rem)",
 			},
 			backgroundImage: {
 				footerBackground: "url('/assets/footer-background.png')",

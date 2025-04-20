@@ -28,7 +28,7 @@ export default function BannerBackground() {
 			<Image
 				src={backgrounds[currentBG]}
 				alt=""
-				className="absolute size-full -z-10  object-cover brightness-75 object-top"
+				className="-z-10 absolute size-full object-cover object-top brightness-75"
 			/>
 			<motion.div
 				key={currentBG}
@@ -40,7 +40,7 @@ export default function BannerBackground() {
 					repeat: Number.POSITIVE_INFINITY,
 					ease: "linear",
 				}}
-			></motion.div>
+			/>
 		</>
 	);
 }

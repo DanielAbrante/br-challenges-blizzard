@@ -10,11 +10,12 @@ function BannerGameIcons() {
 	return (
 		<ul className="mt-12 flex gap-4 lg:flex-col">
 			{gameIcons.map((gameIcon, index) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<li key={index}>
 					<Image
 						src={gameIcon}
 						alt=""
-						className={`cursor-pointer grayscale hover:grayscale-0 ${index == bannerIndex ? "grayscale-0" : ""}`}
+						className={`cursor-pointer grayscale hover:grayscale-0 ${index === bannerIndex ? "grayscale-0" : ""}`}
 					/>
 				</li>
 			))}
