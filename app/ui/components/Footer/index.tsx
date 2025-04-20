@@ -58,11 +58,13 @@ export default function Footer() {
 	}, []);
 
 	return (
-		<footer className="h-screen overflow-x-hidden bg-cover bg-footerBackground bg-no-repeat">
-			<div className="mx-auto max-w-[1300px] px-6 pt-16 md:flex md:px-14 md:pt-24 lg:px-28 xl:pt-32 2xl:px-0">
-				<div className="w-4/5">
+		<footer className="flex flex-col overflow-x-hidden bg-cover bg-footerBackground bg-no-repeat md:flex-row">
+			<div className="mb-9 max-w-[1300px] flex-none pt-16 pl-6 md:flex md:pt-24 md:pl-14 lg:pl-28 xl:pt-32 2xl:mx-auto">
+				<div>
 					<Image src={battleNetLogo} alt="battle.net logo" />
-					<h2 className="mt-7 font-bold text-h2">Baixe agora o battle.net</h2>
+					<h2 className="mt-7 w-3/4 font-bold text-h2 2xl:w-full">
+						Baixe agora o battle.net
+					</h2>
 					<ul className="mt-7 flex flex-col gap-6">
 						<FooterItem
 							icon={rectangleIcon}
@@ -89,19 +91,19 @@ export default function Footer() {
 						</p>
 					</div>
 				</div>
+			</div>
 
-				<div className="relative mt-20 size-full">
-					<Image
-						src={appIlustration}
-						alt=""
-						className="absolute top-0 left-20 scale-150 md:left-64"
-					/>
-					<Image
-						src={miniAppIlustration}
-						alt=""
-						className="absolute top-28 left-16 md:left-64"
-					/>
-				</div>
+			<div className="flex flex-col items-end">
+				<Image
+					src={appIlustration}
+					alt=""
+					className="2xl:-translate-x-28 h-[300px] w-[530px] max-w-none translate-x-40 md:h-[500px] md:w-[900px] md:translate-x-0 md:translate-y-24 xl:translate-x-56"
+				/>
+				<Image
+					src={miniAppIlustration}
+					alt=""
+					className="-translate-y-36 2xl:-translate-y-36 md:-translate-x-72 h-[170px] w-[320px] translate-x-8 md:h-[290px] md:w-[470px] xl:translate-x-28 2xl:w-[560px] 2xl:translate-x-16 2xl:self-start"
+				/>
 			</div>
 		</footer>
 	);
