@@ -29,7 +29,7 @@ export default function Banner() {
 			<BannerContext.Provider value={bannerIndex}>
 				<BannerBackground />
 
-				<div className="relative mx-auto max-h-[45.5rem] max-w-screen-xl px-6 pt-32 pb-8 md:px-14 lg:flex lg:flex-row-reverse lg:justify-end lg:gap-40 lg:px-28 lg:pt-44 lg:pb-28 2xl:px-0">
+				<div className="relative mx-auto max-h-[45.5rem] max-w-global px-sm pt-32 pb-8 md:px-md lg:flex lg:flex-row-reverse lg:justify-between lg:gap-40 lg:pt-44 lg:pb-28 xl:px-xl 2xl:px-0">
 					<div className="flex gap-44">
 						<div>
 							<h1 className="mt-12 font-bold text-bannerTitle leading-[110%] sm:max-w-[38rem]">

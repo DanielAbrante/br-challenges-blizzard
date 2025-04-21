@@ -59,7 +59,7 @@ export default function Footer() {
 
 	return (
 		<footer className="flex flex-col overflow-x-hidden bg-cover bg-footerBackground bg-no-repeat md:flex-row">
-			<div className="mb-9 max-w-[1300px] flex-none pt-16 pl-6 md:flex md:pt-24 md:pl-14 lg:pl-28 xl:pt-32 2xl:mx-auto">
+			<div className="mx-auto mb-9 max-w-global flex-none px-sm pt-16 md:flex md:pt-24 md:pr-0 md:pl-md xl:pt-32 2xl:pl-0">
 				<div>
 					<Image src={battleNetLogo} alt="battle.net logo" />
 					<h2 className="mt-7 w-3/4 font-bold text-h2 2xl:w-full">

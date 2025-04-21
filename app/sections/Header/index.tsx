@@ -18,7 +18,7 @@ export default function Menu() {
 
 	return (
 		<div className="absolute z-10 w-full border-white/10 border-b">
-			<header className="mx-auto flex max-w-screen-xl items-center justify-between p-6 md:px-14 lg:px-28 2xl:px-0">
+			<header className="mx-auto flex max-w-global items-center justify-between px-sm py-6 md:px-md md:py-7 xl:px-xl 2xl:px-0">
 				<div className="flex items-center gap-28">
 					<a
 						href="#"

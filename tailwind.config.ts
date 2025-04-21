@@ -26,7 +26,14 @@ const config: Config = {
 				h2: "clamp(1.75rem, 1.5115rem + 1.0178vw, 2rem)",
 				bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem)",
 			},
+			maxWidth: {
+				global: "1300px",
+			},
 			padding: {
+				sm: "1.5rem",
+				md: "4rem",
+				xl: "7rem",
+				"2xl": "72rem",
 				galleryHeader: "clamp(3.5625rem, 3.1377rem + 1.8123vw, 5.3125rem)",
 			},
 			gridTemplateColumns: {
