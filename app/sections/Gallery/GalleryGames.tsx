@@ -41,10 +41,10 @@ export default function GalleryGames() {
 	}
 
 	return (
-		<section className="grid grid-cols-sm justify-center gap-x-4 gap-y-6 md:grid-cols-md md:gap-x-8 md:gap-y-10 xl:grid-cols-lg xl:gap-y-12 2xl:grid-cols-xl">
+		<section className="grid grid-cols-sm justify-center gap-x-4 gap-y-6 md:grid-cols-md md:gap-x-8 md:gap-y-10 xl:grid-cols-xl xl:gap-y-12 2xl:grid-cols-2xl">
 			{gamesList.map((game) => (
 				<div key={Math.random()}>
-					<div className="relative h-52 md:h-72 xl:h-96">
+					<div className="relative h-52 md:h-72 xl:h-96 ">
 						<Image src={game.image} alt={game.name} fill />
 					</div>
 					<h3 className="mt-5 hidden font-semibold text-lg md:block">

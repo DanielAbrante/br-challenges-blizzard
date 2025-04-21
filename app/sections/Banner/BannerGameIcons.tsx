@@ -8,7 +8,7 @@ function BannerGameIcons() {
 	const bannerIndex = useContext(BannerContext);
 
 	return (
-		<ul className="mt-12 flex gap-4 lg:flex-col">
+		<ul className="mt-12 flex gap-4 xl:flex-col">
 			{gameIcons.map((gameIcon, index) => (
 				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<li key={index}>
