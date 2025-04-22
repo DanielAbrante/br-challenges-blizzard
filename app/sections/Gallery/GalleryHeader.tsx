@@ -8,7 +8,6 @@ import Image from "next/image";
 export default function GalleryHeader() {
 	return (
 		<div className="flex items-end justify-between py-galleryHeader">
-			{/* xl */}
 			<h4 className="hidden self-start pt-2 font-semibold text-gray xl:block">
 				Games
 			</h4>
@@ -17,7 +16,6 @@ export default function GalleryHeader() {
 				Jogos exclusivos
 			</h2>
 
-			{/* md */}
 			<div className="hidden md:block">
 				<ul className="flex gap-6">
 					<li>
@@ -35,12 +33,12 @@ export default function GalleryHeader() {
 				</ul>
 			</div>
 
-			<div className="flex gap-3 pb-2">
-				<div className="relative w-2">
-					<Image src={dotsMenuIcon} alt="" fill />
+			<div className="flex items-center gap-3">
+				<div>
+					<Image src={dotsMenuIcon} alt="" className="min-w-2" />
 				</div>
-				<a href="#" className="font-semibold text-blue text-sm">
-					Ver todos jogos
+				<a href="#" className="font-semibold text-blue text-sm md:text-base">
+					Ver todos os jogos
 				</a>
 			</div>
 		</div>

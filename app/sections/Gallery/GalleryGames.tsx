@@ -65,7 +65,7 @@ export default function GalleryGames() {
 						className="hidden md:block md:grayscale"
 					/>
 
-					<h3 className="font-semibold text-sm">Ver todos jogos</h3>
+					<h3 className="font-semibold text-sm">Ver todos os jogos</h3>
 				</div>
 			</div>
 		</section>
