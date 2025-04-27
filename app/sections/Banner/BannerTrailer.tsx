@@ -1,7 +1,7 @@
 import playIcon from "@/public/assets/banner-hero/icons/play-icon.png";
 
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { BannerContext } from ".";
 import { banners } from "../../data/banner-data";
 
@@ -17,17 +17,12 @@ export default function BannerTrailer() {
 		setIsPlayingTrailer(false);
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useEffect(() => {
-		setIsPlayingTrailer(false);
-	}, [bannerIndex]);
-
 	return (
-		<div className="flex flex-col items-end gap-4">
+		<div className="absolute right-0 bottom-20 hidden flex-col items-end gap-4 md:block xl:flex">
 			<h4 className="hidden font-semibold text-sm xl:block">
 				ASSISTA O TRAILER
 			</h4>
-			<div className="relative flex h-[158px] w-full items-center justify-center">
+			<div className="relative flex h-[158px] w-[280px] items-center justify-center">
 				{!isPlayingTrailer ? (
 					<>
 						<Image

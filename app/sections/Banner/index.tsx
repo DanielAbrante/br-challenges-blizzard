@@ -1,18 +1,21 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 import { ButtonNormal } from "../../components/Buttons";
 import { banners } from "../../data/banner-data";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
-import BannerGameLogo from "./BannerGameLogo";
+import { BannerGameLogo } from "./BannerGameLogo";
 import BannerTrailer from "./BannerTrailer";
 
 export const BannerContext = createContext(0);
 
 export default function Banner() {
 	const [bannerIndex, setBannerIndex] = useState<number>(0);
+
+	const bannerTitleRef = useRef<HTMLHeadingElement>(null);
+	const bannerGameLogoRef = useRef<HTMLImageElement>(null);
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -24,31 +27,55 @@ export default function Banner() {
 		return () => clearInterval(intervalId);
 	}, []);
 
+	useEffect(() => {
+		const isBannerGameLogoOverlapping = () => {
+			const bannerTitleElement = bannerTitleRef.current;
+			const bannerGameLogoElement = bannerGameLogoRef.current;
+
+			if (!bannerTitleElement || !bannerGameLogoElement) return;
+
+			const bannerTitleRect = bannerTitleElement.getBoundingClientRect();
+			const bannerGameLogoRect = bannerGameLogoElement.getBoundingClientRect();
+
+			if (bannerGameLogoRect.left <= bannerTitleRect.right) {
+				bannerGameLogoRef.current.style.visibility = "hidden";
+			} else {
+				bannerGameLogoRef.current.style.visibility = "visible";
+			}
+		};
+
+		isBannerGameLogoOverlapping();
+
+		window.addEventListener("resize", isBannerGameLogoOverlapping);
+	}, []);
+
 	return (
-		<section className="relative">
+		<section className="relative h-[625px] md:h-[736px]">
 			<BannerContext.Provider value={bannerIndex}>
 				<BannerBackground />
 
-				<div className="relative mx-auto max-w-global px-sm pt-32 pb-8 md:px-md xl:flex xl:max-h-[45.5rem] xl:flex-row-reverse xl:justify-between xl:gap-40 xl:px-xl xl:pt-44 xl:pb-28 2xl:px-0">
-					<div className="flex gap-44">
-						<div>
-							<h1 className="mt-12 font-bold text-bannerTitle leading-[110%] sm:max-w-[38rem]">
+				<div className="mx-auto flex h-full max-w-global items-center px-sm pt-[80px] md:px-md md:pt-[96px] xl:gap-40 xl:px-xl 2xl:px-0">
+					<div className="relative flex h-full w-full flex-col justify-between self-center py-14 md:justify-normal md:gap-14 md:py-24 xl:flex-row-reverse 2xl:gap-40">
+						<div className="xl:flex-1">
+							<h1
+								ref={bannerTitleRef}
+								className="line-clamp-4 font-bold text-bannerTitle leading-[110%] md:max-w-[600px]"
+							>
 								{banners[bannerIndex].title}
 							</h1>
-							<p className="mt-4 text-lg">{banners[bannerIndex].description}</p>
-
-							<ButtonNormal className="mt-8" text="Jogue agora" />
+							<p className="mt-4 mb-8 text-lg md:max-w-full">
+								{banners[bannerIndex].description}
+							</p>
+							<ButtonNormal text="Jogue agora" />
 						</div>
 
-						<div className="hidden flex-col justify-center gap-11 py-32 md:flex">
-							<div className="max-h-36">
-								<BannerGameLogo />
-							</div>
-							<BannerTrailer />
+						<BannerGameLogo ref={bannerGameLogoRef} />
+						<BannerTrailer />
+
+						<div className="xl:self-center">
+							<BannerGameIcons />
 						</div>
 					</div>
-
-					<BannerGameIcons />
 				</div>
 			</BannerContext.Provider>
 		</section>
