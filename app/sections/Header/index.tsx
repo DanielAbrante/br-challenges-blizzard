@@ -18,11 +18,11 @@ export default function Menu() {
 
 	return (
 		<div className="absolute z-10 w-full border-white/10 border-b">
-			<header className="mx-auto flex max-w-global items-center justify-between px-sm py-6 md:px-md md:py-7 xl:px-xl 2xl:px-0">
+			<header className="mx-auto flex h-[80px] max-w-global items-center justify-between px-sm md:h-[100px] md:px-md xl:px-xl 2xl:px-0">
 				<div className="flex items-center gap-28">
 					<a
 						href="#"
-						className="relative after:pointer-events-none after:absolute after:top-[45.5px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full md:after:top-[60px]"
+						className="relative after:pointer-events-none after:absolute after:top-[50px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full md:after:top-[63px]"
 					>
 						<Image
 							src={logo}
