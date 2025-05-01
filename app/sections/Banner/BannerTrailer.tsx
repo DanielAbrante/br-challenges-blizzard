@@ -1,12 +1,12 @@
 import playIcon from "@/public/assets/banner-hero/icons/play-icon.png";
 
 import Image from "next/image";
-import { useContext, useState } from "react";
-import { BannerContext } from ".";
-import { banners } from "../../data/banner-data";
+import { useState } from "react";
+import { useBannerContext } from ".";
 
 export default function BannerTrailer() {
-	const bannerIndex = useContext(BannerContext);
+	const { banner } = useBannerContext();
+
 	const [isPlayingTrailer, setIsPlayingTrailer] = useState<boolean>(false);
 
 	const playTrailer = () => {
@@ -22,25 +22,27 @@ export default function BannerTrailer() {
 			<h4 className="hidden font-semibold text-sm xl:block">
 				ASSISTA O TRAILER
 			</h4>
-			<div className="relative flex h-[158px] w-[280px] items-center justify-center">
+			<div className="relative flex items-center justify-center hover:cursor-pointer">
 				{!isPlayingTrailer ? (
 					<>
 						<Image
-							src={banners[bannerIndex].gameLogoTrailer}
-							alt={""}
-							fill
-							className="hidden object-cover md:block"
+							src={banner.cover}
+							alt=""
+							width={280}
+							height={158}
+							className="hidden h-[158px] w-[280px] object-cover md:block"
 							onMouseEnter={playTrailer}
 						/>
 						<Image src={playIcon} alt="" className="absolute" />
 					</>
 				) : (
 					<Image
-						src={banners[bannerIndex].gameTrailer}
+						src={banner.trailer}
 						alt={""}
+						width={280}
+						height={158}
 						unoptimized
-						fill
-						className="hidden object-cover md:block"
+						className="hidden h-[158px] w-[280px] object-cover md:block"
 						onMouseLeave={stopTrailer}
 					/>
 				)}

@@ -1,42 +1,42 @@
 "use client";
 
-import diablo from "@/public/assets/banner-hero/games/diablo-bg.png";
-import hearthstone from "@/public/assets/banner-hero/games/hearthstone-bg.png";
-import wow from "@/public/assets/banner-hero/games/wow-bg.png";
-import { motion } from "framer-motion";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
-const backgrounds = [diablo, hearthstone, wow];
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useBannerContext } from ".";
+
+import { banners } from "./bannerData";
 
 export default function BannerBackground() {
-	const [currentBG, setCurrentBG] = useState<number>(0);
+	const { setBannerIndex, bannerDelay, banner } = useBannerContext();
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
-			setCurrentBG((prevIndex) =>
-				prevIndex === backgrounds.length - 1 ? 0 : prevIndex + 1,
+			setBannerIndex((prevIndex) =>
+				prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
 			);
-		}, 3000);
+		}, bannerDelay);
 
 		return () => clearInterval(intervalId);
-	}, []);
+	}, [setBannerIndex, bannerDelay]);
 
 	return (
 		<>
 			<Image
-				src={backgrounds[currentBG]}
+				src={banner.background}
+				priority
 				alt=""
-				className={`-z-10 absolute size-full object-cover ${currentBG === 0 ? "object-top" : "object-[70%_top]"} brightness-75`}
+				fill
+				className={`-z-10 absolute size-full object-cover ${banner.isCenteredPosition ? "object-top" : "object-[70%_top]"} brightness-75`}
 			/>
 			<motion.div
-				key={currentBG}
+				key={banner.id}
 				className="absolute bottom-0 h-[3px] bg-blue"
 				initial={{ width: 0 }}
 				animate={{ width: "100%" }}
 				transition={{
-					duration: 3,
+					duration: bannerDelay / 1000,
 					repeat: Number.POSITIVE_INFINITY,
 					ease: "linear",
 				}}

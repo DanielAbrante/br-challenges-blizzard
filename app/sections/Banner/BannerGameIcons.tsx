@@ -1,21 +1,19 @@
 import Image from "next/image";
 
-import { useContext } from "react";
-import { BannerContext } from ".";
-import { gameIcons } from "../../data/banner-data";
+import { useBannerContext } from ".";
+import { banners } from "./bannerData";
 
 function BannerGameIcons() {
-	const bannerIndex = useContext(BannerContext);
+	const { bannerIndex } = useBannerContext();
 
 	return (
 		<ul className="flex gap-4 xl:flex-col">
-			{gameIcons.map((gameIcon, index) => (
-				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-				<li key={index}>
+			{banners.map((banner) => (
+				<li key={banner.id}>
 					<Image
-						src={gameIcon}
+						src={banner.icon}
 						alt=""
-						className={`cursor-pointer grayscale hover:grayscale-0 ${index === bannerIndex ? "grayscale-0" : ""}`}
+						className={`cursor-pointer grayscale hover:grayscale-0 ${banner.id === (bannerIndex + 1) ? "grayscale-0" : ""}`}
 					/>
 				</li>
 			))}

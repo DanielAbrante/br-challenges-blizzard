@@ -1,31 +1,42 @@
 "use client";
 
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 
+import type { BannersProps } from "@/app/interfaces/global";
 import { ButtonNormal } from "../../components/Buttons";
-import { banners } from "../../data/banner-data";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import { BannerGameLogo } from "./BannerGameLogo";
 import BannerTrailer from "./BannerTrailer";
+import { banners } from "./bannerData";
 
-export const BannerContext = createContext(0);
+type BannerContextType = {
+	bannerIndex: number;
+	setBannerIndex: React.Dispatch<React.SetStateAction<number>>;
+	bannerDelay: number;
+	banner: BannersProps;
+};
+
+const BannerContext = createContext<BannerContextType | null>(null);
+
+export const useBannerContext = () => {
+	const bannerContext = useContext(BannerContext);
+
+	if (!bannerContext) {
+		throw new Error(
+			"useBannerContext has to be used within <BannerContext.Provider>",
+		);
+	}
+
+	return bannerContext;
+};
 
 export default function Banner() {
 	const [bannerIndex, setBannerIndex] = useState<number>(0);
+	const bannerDelay = 3000;
 
 	const bannerTitleRef = useRef<HTMLHeadingElement>(null);
 	const bannerGameLogoRef = useRef<HTMLImageElement>(null);
-
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setBannerIndex((bannerIndex) =>
-				banners.length - 1 === bannerIndex ? 0 : bannerIndex + 1,
-			);
-		}, 3000);
-
-		return () => clearInterval(intervalId);
-	}, []);
 
 	useEffect(() => {
 		const isBannerGameLogoOverlapping = () => {
@@ -51,7 +62,14 @@ export default function Banner() {
 
 	return (
 		<section className="relative h-[625px] md:h-[736px]">
-			<BannerContext.Provider value={bannerIndex}>
+			<BannerContext.Provider
+				value={{
+					bannerIndex: bannerIndex,
+					setBannerIndex: setBannerIndex,
+					bannerDelay: bannerDelay,
+					banner: banners[bannerIndex],
+				}}
+			>
 				<BannerBackground />
 
 				<div className="mx-auto flex h-full max-w-global items-center px-sm pt-[80px] md:px-md md:pt-[96px] xl:gap-40 xl:px-xl 2xl:px-0">

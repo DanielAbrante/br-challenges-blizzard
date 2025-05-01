@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { InterfaceFooterItem } from "../../types/appInterfaces";
+import type { InterfaceFooterItem } from "../../interfaces/global";
 
 export default function FooterItem({ icon, title }: InterfaceFooterItem) {
 	return (
