@@ -33,7 +33,7 @@ export const useBannerContext = () => {
 
 export default function Banner() {
 	const [bannerIndex, setBannerIndex] = useState<number>(0);
-	const bannerDelay = 3000;
+	const bannerDelay = 5000;
 
 	const bannerTitleRef = useRef<HTMLHeadingElement>(null);
 	const bannerGameLogoRef = useRef<HTMLImageElement>(null);
@@ -58,6 +58,16 @@ export default function Banner() {
 		isBannerGameLogoOverlapping();
 
 		window.addEventListener("resize", isBannerGameLogoOverlapping);
+	}, []);
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setBannerIndex((prevIndex) =>
+				prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
+			);
+		}, bannerDelay);
+
+		return () => clearInterval(intervalId);
 	}, []);
 
 	return (
