@@ -21,5 +21,5 @@ export interface BannersProps {
 	logo: StaticImageData;
 	trailer: StaticImageData;
 	cover: StaticImageData;
-	isCenteredPosition: boolean;
+	isCenterPosition: boolean;
 }

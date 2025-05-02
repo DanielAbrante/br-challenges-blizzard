@@ -40,7 +40,7 @@ export const banners: BannersProps[] = [
 		logo: diablo04Logo,
 		trailer: diablo04Trailer,
 		cover: diablo04TrailerCover,
-		isCenteredPosition: true,
+		isCenterPosition: true,
 	},
 	{
 		id: 2,
@@ -52,7 +52,7 @@ export const banners: BannersProps[] = [
 		logo: hearthstoneLogo,
 		trailer: hearthstoneTrailer,
 		cover: hearthstoneTrailerCover,
-		isCenteredPosition: false,
+		isCenterPosition: false,
 	},
 	{
 		id: 3,
@@ -63,7 +63,7 @@ export const banners: BannersProps[] = [
 		logo: diablo02Logo,
 		trailer: diablo02Trailer,
 		cover: diablo02TrailerCover,
-		isCenteredPosition: true,
+		isCenterPosition: true,
 	},
 	{
 		id: 4,
@@ -74,7 +74,7 @@ export const banners: BannersProps[] = [
 		logo: wowLogo,
 		trailer: wowTrailer,
 		cover: wowTrailerCover,
-		isCenteredPosition: false,
+		isCenterPosition: false,
 	},
 	{
 		id: 5,
@@ -86,6 +86,6 @@ export const banners: BannersProps[] = [
 		logo: starcraftLogo,
 		trailer: starcraftTrailer,
 		cover: starcraftTrailerCover,
-		isCenteredPosition: true,
+		isCenterPosition: true,
 	},
 ];
