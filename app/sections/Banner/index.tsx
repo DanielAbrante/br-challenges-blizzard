@@ -15,6 +15,9 @@ type BannerContextType = {
 	setBannerIndex: React.Dispatch<React.SetStateAction<number>>;
 	bannerDelay: number;
 	banner: BannersProps;
+	isPlayingTrailer: boolean;
+	setIsPlayingTrailer: React.Dispatch<React.SetStateAction<boolean>>;
+	setIsEndedAnimation: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const BannerContext = createContext<BannerContextType | null>(null);
@@ -34,6 +37,9 @@ export const useBannerContext = () => {
 export default function Banner() {
 	const [bannerIndex, setBannerIndex] = useState<number>(0);
 	const bannerDelay = 5000;
+
+	const [isPlayingTrailer, setIsPlayingTrailer] = useState<boolean>(false);
+	const [isEndedAnimation, setIsEndedAnimation] = useState<boolean>(false);
 
 	const bannerTitleRef = useRef<HTMLHeadingElement>(null);
 	const bannerGameLogoRef = useRef<HTMLImageElement>(null);
@@ -61,14 +67,24 @@ export default function Banner() {
 	}, []);
 
 	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setBannerIndex((prevIndex) =>
-				prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
-			);
-		}, bannerDelay);
+		if (!isPlayingTrailer) {
+			if (isEndedAnimation) {
+				setBannerIndex((prevIndex) =>
+					prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
+				);
 
-		return () => clearInterval(intervalId);
-	}, []);
+				setIsEndedAnimation(false);
+			}
+
+			const intervalId = setInterval(() => {
+				setBannerIndex((prevIndex) =>
+					prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
+				);
+			}, bannerDelay);
+
+			return () => clearInterval(intervalId);
+		}
+	}, [isPlayingTrailer, isEndedAnimation]);
 
 	return (
 		<section className="relative h-[625px] md:h-[736px]">
@@ -78,6 +94,9 @@ export default function Banner() {
 					setBannerIndex: setBannerIndex,
 					bannerDelay: bannerDelay,
 					banner: banners[bannerIndex],
+					isPlayingTrailer: isPlayingTrailer,
+					setIsPlayingTrailer: setIsPlayingTrailer,
+					setIsEndedAnimation: setIsEndedAnimation,
 				}}
 			>
 				<BannerBackground />

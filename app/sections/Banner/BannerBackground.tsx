@@ -1,13 +1,24 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { useBannerContext } from ".";
 import { banners } from "./bannerData";
 
 export default function BannerBackground() {
-	const { bannerDelay, banner, bannerIndex } = useBannerContext();
+	const {
+		bannerDelay,
+		banner,
+		bannerIndex,
+		setIsEndedAnimation,
+		isPlayingTrailer,
+	} = useBannerContext();
 
 	const nextImage = banners[(bannerIndex + 1) % banners.length];
+
+	useEffect(() => {
+		console.log(isPlayingTrailer);
+	}, [isPlayingTrailer]);
 
 	return (
 		<>
@@ -20,15 +31,15 @@ export default function BannerBackground() {
 			<Image src={nextImage.background} alt="" className="invisible size-0" />
 
 			<motion.div
-				key={banner.id}
+				key={bannerIndex}
 				className="absolute bottom-0 h-[3px] bg-blue"
 				initial={{ width: 0 }}
 				animate={{ width: "100%" }}
 				transition={{
 					duration: bannerDelay / 1000,
-					repeat: Number.POSITIVE_INFINITY,
 					ease: "linear",
 				}}
+				onAnimationComplete={() => setIsEndedAnimation(true)}
 			/>
 		</>
 	);
