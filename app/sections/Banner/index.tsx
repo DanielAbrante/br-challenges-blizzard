@@ -66,6 +66,7 @@ export default function Banner() {
 		window.addEventListener("resize", isBannerGameLogoOverlapping);
 	}, []);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (!isPlayingTrailer) {
 			if (isEndedAnimation) {
@@ -76,15 +77,15 @@ export default function Banner() {
 				setIsEndedAnimation(false);
 			}
 
-			const intervalId = setInterval(() => {
+			const intervalId = setTimeout(() => {
 				setBannerIndex((prevIndex) =>
 					prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
 				);
 			}, bannerDelay);
 
-			return () => clearInterval(intervalId);
+			return () => clearTimeout(intervalId);
 		}
-	}, [isPlayingTrailer, isEndedAnimation]);
+	}, [isPlayingTrailer, isEndedAnimation, bannerIndex]);
 
 	return (
 		<section className="relative h-[625px] md:h-[736px]">
