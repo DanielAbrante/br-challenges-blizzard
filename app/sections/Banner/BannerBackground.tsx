@@ -1,24 +1,14 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { useBannerContext } from ".";
 import { banners } from "./bannerData";
 
 export default function BannerBackground() {
-	const {
-		bannerDelay,
-		banner,
-		bannerIndex,
-		setIsEndedAnimation,
-		isPlayingTrailer,
-	} = useBannerContext();
+	const { bannerDelay, banner, bannerIndex, setIsEndedAnimation } =
+		useBannerContext();
 
 	const nextImage = banners[(bannerIndex + 1) % banners.length];
-
-	useEffect(() => {
-		console.log(isPlayingTrailer);
-	}, [isPlayingTrailer]);
 
 	return (
 		<>

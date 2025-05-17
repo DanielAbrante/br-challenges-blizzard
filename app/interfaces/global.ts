@@ -23,3 +23,9 @@ export interface BannersProps {
 	cover: StaticImageData;
 	isCenterPosition: boolean;
 }
+
+export interface PlataformsType {
+	id: number;
+	icon: StaticImageData;
+	alt: string;
+}
