@@ -18,7 +18,7 @@ function BannerGameIcons() {
 						src={banner.icon}
 						alt=""
 						onClick={() => handleChangeBanner(banner.id)}
-						className={`cursor-pointer grayscale hover:grayscale-0 ${banner.id === (bannerIndex + 1) ? "grayscale-0" : ""}`}
+						className={`cursor-pointer lg:hover:grayscale-0 ${banner.id === (bannerIndex + 1) ? "grayscale-0" : "grayscale"}`}
 					/>
 				</li>
 			))}
