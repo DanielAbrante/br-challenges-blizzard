@@ -1,8 +1,13 @@
-import dotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
-import Image from "next/image";
-import { plataforms } from "./plataforms-data";
+import DotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
+import { platformIcons } from "./galleryData";
 
-export default function GalleryHeader() {
+export default function GalleryHeader({
+	platform,
+	setPlatform,
+}: {
+	platform: number;
+	setPlatform: (platformId: number) => void;
+}) {
 	return (
 		<div className="flex items-end justify-between py-galleryHeader">
 			<h4 className="hidden self-start pt-2 font-semibold text-gray xl:block">
@@ -15,9 +20,12 @@ export default function GalleryHeader() {
 
 			<div className="hidden md:block">
 				<ul className="flex gap-6">
-					{plataforms.map((plataform) => (
-						<li key={plataform.id}>
-							<Image src={plataform.icon} alt={plataform.alt} />
+					{platformIcons.map((platformIcon) => (
+						<li key={platformIcon.id}>
+							<platformIcon.icon
+								onClick={() => setPlatform(platformIcon.id)}
+								className={`hover:cursor-pointer ${platformIcon.id === platform ? "text-blue hover:opacity-100" : "hover:opacity-70"} `}
+							/>
 						</li>
 					))}
 				</ul>
@@ -25,7 +33,7 @@ export default function GalleryHeader() {
 
 			<div className="flex items-center gap-3">
 				<div>
-					<Image src={dotsMenuIcon} alt="" className="min-w-2" />
+					<DotsMenuIcon className="min-w-2" />
 				</div>
 				<a href="#" className="font-semibold text-blue text-sm md:text-base">
 					Ver todos os jogos

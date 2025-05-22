@@ -1,11 +1,5 @@
 import type { StaticImageData } from "next/image";
-
-export interface InterfaceGameList {
-	category: string;
-	image: string;
-	logo: string;
-	name: string;
-}
+import type { FC, SVGProps } from "react";
 
 export interface InterfaceFooterItem {
 	icon: string;
@@ -24,8 +18,16 @@ export interface BannersProps {
 	isCenterPosition: boolean;
 }
 
-export interface PlataformsType {
+export interface PlatformIconsType {
 	id: number;
-	icon: StaticImageData;
+	icon: FC<SVGProps<SVGElement>>;
 	alt: string;
+}
+
+export interface gamesDataResponse {
+	name: string;
+	category: string;
+	image: string;
+	logo: string;
+	platforms: string[];
 }
