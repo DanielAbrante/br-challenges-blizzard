@@ -1,12 +1,12 @@
-import Image from "next/image";
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, FC, SVGProps } from "react";
+import type { SVGComponent } from "../interfaces/global";
 
 interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
 }
 
 interface ButtonWithIconProps extends ButtonsProps {
-	icon: string;
+	icon: SVGComponent;
 }
 
 export function ButtonNormal({ text, className }: ButtonsProps) {
@@ -33,7 +33,7 @@ export function ButtonOutline({ text, ...props }: ButtonsProps) {
 
 export function ButtonWithIcon({
 	text,
-	icon,
+	icon: Icon,
 	className,
 	...props
 }: ButtonWithIconProps) {
@@ -42,7 +42,7 @@ export function ButtonWithIcon({
 			{...props}
 			className={`flex w-32 items-center justify-center gap-2 rounded bg-blue px-4 py-3 font-medium text-sm ${className}`}
 		>
-			{icon && <Image src={icon} alt="" />}
+			<Icon />
 			{text}
 		</button>
 	);

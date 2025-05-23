@@ -1,7 +1,7 @@
-import appleIcon from "@/public/assets/banner-hero/icons/apple-icon.svg";
-import closeModalIcon from "@/public/assets/banner-hero/icons/close-modal-icon.svg";
-import facebookIcon from "@/public/assets/banner-hero/icons/facebook-icon.svg";
-import googleIcon from "@/public/assets/banner-hero/icons/google-icon.svg";
+import AppleIcon from "@/public/assets/banner-hero/icons/apple-icon.svg";
+import CloseModalIcon from "@/public/assets/banner-hero/icons/close-modal-icon.svg";
+import FacebookIcon from "@/public/assets/banner-hero/icons/facebook-icon.svg";
+import GoogleIcon from "@/public/assets/banner-hero/icons/google-icon.svg";
 import battleNetLogo from "@/public/assets/logo-battle-net.png";
 import Image from "next/image";
 import { type RefObject, forwardRef } from "react";
@@ -17,9 +17,7 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 
 	return (
 		<dialog className="bg-modalBackground px-32 py-16" ref={ref}>
-			<Image
-				src={closeModalIcon}
-				alt={""}
+			<CloseModalIcon
 				className="absolute top-8 right-8 hover:scale-150 hover:cursor-pointer"
 				onClick={handleCloseModalClick}
 			/>
@@ -64,13 +62,13 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 					<p>ou conecte-se com</p>
 					<ul className="mt-4 flex gap-4">
 						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
-							<Image src={googleIcon} alt="" />
+							<GoogleIcon />
 						</li>
 						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
-							<Image src={appleIcon} alt="" />
+							<AppleIcon />
 						</li>
 						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
-							<Image src={facebookIcon} alt="" />
+							<FacebookIcon />
 						</li>
 					</ul>
 

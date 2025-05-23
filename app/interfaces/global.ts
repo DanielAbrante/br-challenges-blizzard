@@ -1,10 +1,7 @@
 import type { StaticImageData } from "next/image";
 import type { FC, SVGProps } from "react";
 
-export interface InterfaceFooterItem {
-	icon: string;
-	title: string;
-}
+export type SVGComponent = FC<SVGProps<SVGElement>>;
 
 export interface BannersProps {
 	id: number;
@@ -20,7 +17,7 @@ export interface BannersProps {
 
 export interface PlatformIconsType {
 	id: number;
-	icon: FC<SVGProps<SVGElement>>;
+	icon: SVGComponent;
 	alt: string;
 }
 

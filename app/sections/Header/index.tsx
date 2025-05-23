@@ -1,7 +1,7 @@
 "use client";
 
-import menuIcon from "@/public/assets/banner-hero/icons/menu.svg";
-import profileIcon from "@/public/assets/banner-hero/icons/profile.svg";
+import MenuIcon from "@/public/assets/banner-hero/icons/menu.svg";
+import ProfileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
 import { useRef } from "react";
@@ -49,16 +49,12 @@ export default function Menu() {
 						<ButtonOutline text="Criar conta" />
 						<ButtonWithIcon
 							text="Logar"
-							icon={profileIcon}
+							icon={ProfileIcon}
 							onClick={handleLoginClick}
 						/>
 					</div>
 
-					<Image
-						src={menuIcon}
-						alt="Menu icon toggle"
-						className="hover:cursor-pointer xl:hidden"
-					/>
+					<MenuIcon className="hover:cursor-pointer xl:hidden" />
 				</div>
 			</header>
 
