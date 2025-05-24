@@ -1,5 +1,6 @@
 "use client";
 
+import Dropdown from "@/app/components/Dropdown";
 import MenuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import ProfileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
@@ -34,11 +35,11 @@ export default function Menu() {
 					{/* Above xl */}
 					<nav className="hidden xl:block">
 						<ul className="flex gap-8">
-							<NavLink text="Jogos" href="/" hasDropDown />
-							<NavLink text="Esportes" href="/" hasDropDown />
-							<NavLink text="Loja" href="/" />
-							<NavLink text="Notícias" href="/" />
-							<NavLink text="Suporte" href="/" />
+							<Dropdown text="Jogos" href="#" />
+							<Dropdown text="Esportes" href="#" />
+							<NavLink text="Loja" href="#" />
+							<NavLink text="Notícias" href="#" />
+							<NavLink text="Suporte" href="#" />
 						</ul>
 					</nav>
 				</div>

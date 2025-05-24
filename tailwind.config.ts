@@ -47,12 +47,12 @@ const config: Config = {
 				modalBackground: "url('/assets/modal-background.png')",
 			},
 			animation: {
-				illustration: "levitate 5s infinite",
+				illustration: "levitate 4s infinite",
 			},
 			keyframes: {
 				levitate: {
-					"0%, 100%": { transform: "translateY(-1%)" },
-					"50%": { transform: "translateY(1%)" },
+					"0%, 100%": { transform: "translateY(1%)" },
+					"50%": { transform: "translateY(-1%)" },
 				},
 			},
 		},
