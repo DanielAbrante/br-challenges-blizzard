@@ -7,7 +7,14 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [".next", "node_modules", "public"]
+		"ignore": [
+			".next",
+			"node_modules",
+			"public",
+			".github",
+			".husky",
+			".vscode"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -21,6 +28,12 @@
 		"rules": {
 			"a11y": {
 				"useValidAnchor": "off"
+			},
+			"correctness": {
+				"noUnusedImports": {
+					"fix": "none",
+					"level": "warn"
+				}
 			},
 			"recommended": true,
 			"nursery": {

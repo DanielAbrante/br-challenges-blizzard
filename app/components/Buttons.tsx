@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC, SVGProps } from "react";
+import type { ButtonHTMLAttributes } from "react";
 import type { SVGComponent } from "../interfaces/global";
 
 interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
