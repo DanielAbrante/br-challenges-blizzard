@@ -46,6 +46,15 @@ const config: Config = {
 				footerBackground: "url('/assets/footer-background.png')",
 				modalBackground: "url('/assets/modal-background.png')",
 			},
+			animation: {
+				illustration: "levitate 5s infinite",
+			},
+			keyframes: {
+				levitate: {
+					"0%, 100%": { transform: "translateY(-1%)" },
+					"50%": { transform: "translateY(1%)" },
+				},
+			},
 		},
 	},
 	plugins: [],

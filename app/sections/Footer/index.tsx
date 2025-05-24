@@ -51,7 +51,7 @@ export default function Footer() {
 	}, []);
 
 	return (
-		<footer className="flex flex-col overflow-x-hidden bg-cover bg-footerBackground bg-no-repeat md:flex-row">
+		<footer className="flex flex-col overflow-hidden bg-cover bg-footerBackground bg-no-repeat md:flex-row">
 			<div className="mx-auto mb-9 max-w-global flex-none px-sm pt-16 md:flex md:pt-24 md:pr-0 md:pl-md xl:pt-32 2xl:pl-0">
 				<div>
 					<Image src={battleNetLogo} alt="battle.net logo" />
@@ -70,11 +70,17 @@ export default function Footer() {
 						<FooterItem icon={BuyIcon} title="Compre jogos e itens digitais" />
 					</ul>
 					{operatingSystem ? (
-						<ButtonWithIcon
-							icon={osIconMap[operatingSystem]}
-							text={`Baixar para o ${operatingSystem}`}
-							className="mt-10 w-64 px-8 py-3 font-semibold"
-						/>
+						<a
+							href="https://download.battle.net/?product=bnetdesk"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<ButtonWithIcon
+								icon={osIconMap[operatingSystem]}
+								text={`Baixar para o ${operatingSystem}`}
+								className="mt-10 w-64 px-8 py-3 font-semibold hover:opacity-90"
+							/>
+						</a>
 					) : (
 						<ButtonNormal
 							text={"Baixar para o Dispositivo"}
@@ -93,7 +99,7 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-end">
+			<div className="flex animate-illustration flex-col items-end">
 				<Image
 					src={appIlustration}
 					alt=""
