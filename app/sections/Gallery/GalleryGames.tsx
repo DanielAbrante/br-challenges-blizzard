@@ -5,7 +5,7 @@ import DotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 
 import { useEffect, useState } from "react";
-import { LoadingSpinner } from "../../components/LoadingSpinner";
+import { Spinner } from "../../components/Spinner";
 import type { gamesDataResponse } from "../../interfaces/global";
 import { Platform, platformsPerGame } from "./galleryData";
 
@@ -42,7 +42,7 @@ export default function GalleryGames({ platform }: { platform: number }) {
 	}, []);
 
 	if (!gamesList || gamesList.length === 0) {
-		return <LoadingSpinner />;
+		return <Spinner />;
 	}
 
 	return (

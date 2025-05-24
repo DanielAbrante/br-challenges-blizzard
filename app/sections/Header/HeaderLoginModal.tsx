@@ -73,7 +73,7 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 					</ul>
 
 					<p className="mt-9">
-						<a href="#" className="text-blue underline hover:brightness-150">
+						<a href="" className="text-blue underline hover:brightness-150">
 							Crie uma conta
 						</a>{" "}
 						Battle.net de graça

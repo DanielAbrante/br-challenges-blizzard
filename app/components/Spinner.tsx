@@ -1,4 +1,4 @@
-export function LoadingSpinner() {
+export function Spinner() {
 	return (
 		<div className="flex items-center justify-center">
 			<span className="mr-6 block size-6 animate-spin rounded border md:size-10" />
