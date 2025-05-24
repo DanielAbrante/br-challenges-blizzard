@@ -1,3 +1,4 @@
+import { Button } from "@/app/components/Button";
 import AppleIcon from "@/public/assets/banner-hero/icons/apple-icon.svg";
 import CloseModalIcon from "@/public/assets/banner-hero/icons/close-modal-icon.svg";
 import FacebookIcon from "@/public/assets/banner-hero/icons/facebook-icon.svg";
@@ -49,12 +50,11 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 							/>
 						</p>
 
-						<button
-							type="button"
-							className="mt-6 w-full rounded bg-blue py-3 font-semibold text-white"
-						>
-							Conectar-se
-						</button>
+						<Button
+							text="Conectar-se"
+							weight="semibold"
+							className="mt-6 w-full py-4"
+						/>
 					</h2>
 				</form>
 

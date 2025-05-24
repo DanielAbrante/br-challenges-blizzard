@@ -20,6 +20,7 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 - [Biome](https://biomejs.dev/)
 - [Framer Motion](https://motion.dev/)
 - [SVGR](https://react-svgr.com/)
+- [CLSX](https://github.com/lukeed/clsx#readme)
 
 ## 📝 Requisitos do desafio
 

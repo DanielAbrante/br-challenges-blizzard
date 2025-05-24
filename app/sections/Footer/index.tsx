@@ -20,7 +20,7 @@ import miniAppIlustration from "@/public/assets/ilustrations/app-mini.png";
 import appIlustration from "@/public/assets/ilustrations/app.png";
 
 import type { SVGComponent } from "@/app/interfaces/global";
-import { ButtonNormal, ButtonWithIcon } from "../../components/Buttons";
+import { Button } from "../../components/Button";
 
 type OperatingSystem = "Linux" | "Windows" | "Macintosh";
 
@@ -69,24 +69,24 @@ export default function Footer() {
 						/>
 						<FooterItem icon={BuyIcon} title="Compre jogos e itens digitais" />
 					</ul>
-					{operatingSystem ? (
-						<a
-							href="https://download.battle.net/?product=bnetdesk"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<ButtonWithIcon
-								icon={osIconMap[operatingSystem]}
-								text={`Baixar para o ${operatingSystem}`}
-								className="mt-10 w-64 px-8 py-3 font-semibold hover:opacity-90"
-							/>
-						</a>
-					) : (
-						<ButtonNormal
-							text={"Baixar para o Dispositivo"}
-							className="mt-10 w-64 px-8 py-3 font-semibold"
-						/>
-					)}
+					<div className="mt-10">
+						{operatingSystem ? (
+							<a
+								href="https://download.battle.net/?product=bnetdesk"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<Button
+									icon={osIconMap[operatingSystem]}
+									text={`Baixar para o ${operatingSystem}`}
+									weight="semibold"
+								/>
+							</a>
+						) : (
+							<Button text={"Baixar para o Dispositivo"} weight="semibold" />
+						)}
+					</div>
+
 					<div className="mt-10 flex items-center gap-4">
 						<PhoneIcon />
 						<p className="max-w-60 font-semibold text-grayLight text-sm">

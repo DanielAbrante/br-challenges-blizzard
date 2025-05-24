@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 import type { BannersProps } from "@/app/interfaces/global";
-import { ButtonNormal } from "../../components/Buttons";
+import { Button } from "../../components/Button";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import { BannerGameLogo } from "./BannerGameLogo";
@@ -114,7 +114,7 @@ export default function Banner() {
 							<p className="mt-4 mb-8 text-lg md:max-w-full">
 								{banners[bannerIndex].description}
 							</p>
-							<ButtonNormal text="Jogue agora" />
+							<Button text={"Jogue agora"} />
 						</div>
 
 						<BannerGameLogo ref={bannerGameLogoRef} />

@@ -5,7 +5,7 @@ import ProfileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
 import { useRef } from "react";
-import { ButtonOutline, ButtonWithIcon } from "../../components/Buttons";
+import { Button } from "../../components/Button";
 import NavLink from "../../components/NavLink";
 import HeaderLoginModal from "./HeaderLoginModal";
 
@@ -46,8 +46,8 @@ export default function Menu() {
 				{/* Above md */}
 				<div className="flex gap-20">
 					<div className="hidden gap-4 md:flex">
-						<ButtonOutline text="Criar conta" />
-						<ButtonWithIcon
+						<Button text="Criar conta" variant="outline" />
+						<Button
 							text="Logar"
 							icon={ProfileIcon}
 							onClick={handleLoginClick}
