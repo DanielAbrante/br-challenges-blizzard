@@ -9,7 +9,7 @@ export default function GalleryHeader({
 	setPlatform: (platformId: number) => void;
 }) {
 	return (
-		<div className="flex items-end justify-between py-galleryHeader">
+		<div className="flex flex-wrap items-end justify-between gap-3 py-galleryHeader">
 			<h4 className="hidden self-start pt-2 font-semibold text-gray xl:block">
 				Games
 			</h4>

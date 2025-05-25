@@ -55,8 +55,22 @@ export default function GalleryGames({ platform }: { platform: number }) {
 				) {
 					return (
 						<div key={Math.random()}>
-							<div className="relative h-52 md:h-72 xl:h-96 ">
-								<Image src={game.image} alt={game.name} fill />
+							<div className="relative h-52 overflow-hidden rounded-md md:h-72 xl:h-96">
+								<Image
+									src={game.image}
+									alt={game.name}
+									fill
+									className="origin-bottom transition-transform duration-300 hover:scale-110"
+								/>
+
+								<div className="absolute bottom-5 flex w-full justify-center md:bottom-8 lg:bottom-11">
+									<Image
+										src={game.logo}
+										alt={game.name}
+										width={161}
+										height={106}
+									/>
+								</div>
 							</div>
 							<h3 className="mt-5 hidden font-semibold text-lg md:block">
 								{game.name}
