@@ -102,8 +102,8 @@ export default function Banner() {
 			>
 				<BannerBackground />
 
-				<div className="mx-auto flex h-full max-w-global items-center px-sm pt-[80px] md:px-md md:pt-[96px] xl:gap-40 xl:px-xl 2xl:px-0">
-					<div className="relative flex h-full w-full flex-col justify-between self-center py-14 md:justify-normal md:gap-14 md:py-24 xl:flex-row-reverse 2xl:gap-40">
+				<div className="mx-auto flex h-full items-center px-sm pt-[80px] md:px-md md:pt-[96px] xl:max-w-xl xl:gap-40 xl:px-0 2xl:max-w-2xl">
+					<div className="relative flex h-full w-full flex-col justify-between self-center py-14 md:justify-normal md:gap-14 md:py-24 xl:flex-row-reverse">
 						<div className="xl:flex-1">
 							<h1
 								ref={bannerTitleRef}

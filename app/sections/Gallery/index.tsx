@@ -10,7 +10,7 @@ export default function Gallery() {
 
 	return (
 		<main className="bg-black pb-16">
-			<div className="mx-auto max-w-global px-sm md:px-md xl:px-xl 2xl:px-0">
+			<div className="mx-auto px-sm md:px-12 xl:max-w-xl xl:px-0 2xl:max-w-2xl">
 				<GalleryHeader platform={platform} setPlatform={setPlatform} />
 				<GalleryGames platform={platform} />
 			</div>

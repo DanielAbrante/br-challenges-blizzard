@@ -55,21 +55,24 @@ export default function GalleryGames({ platform }: { platform: number }) {
 				) {
 					return (
 						<div key={Math.random()}>
-							<div className="relative h-52 overflow-hidden rounded-md md:h-72 xl:h-96">
+							<div className="relative h-[214px] overflow-hidden rounded-md md:h-[277px] xl:h-[384px] 2xl:h-[413px]">
 								<Image
 									src={game.image}
 									alt={game.name}
 									fill
 									className="origin-bottom transition-transform duration-300 hover:scale-110"
+									sizes="(max-width: 768px) 8rem, (max-width: 1440px) 12.5rem, 17.5rem"
 								/>
 
 								<div className="absolute bottom-5 flex w-full justify-center md:bottom-8 lg:bottom-11">
-									<Image
-										src={game.logo}
-										alt={game.name}
-										width={161}
-										height={106}
-									/>
+									<div className="relative h-[54px] w-[82px] md:h-[71px] md:w-[107px] xl:h-[98px] xl:w-[148px]">
+										<Image
+											src={game.logo}
+											alt={game.name}
+											fill
+											sizes="(max-width: 768px) 54px, (max-width: 1440px) 107px, 148px"
+										/>
+									</div>
 								</div>
 							</div>
 							<h3 className="mt-5 hidden font-semibold text-lg md:block">
@@ -86,9 +89,11 @@ export default function GalleryGames({ platform }: { platform: number }) {
 				<Image src={logo} alt="Blizzard Company" />
 
 				<div className="flex gap-3">
-					<DotsMenuIcon className="hidden md:block md:grayscale" />
+					<DotsMenuIcon className="hidden self-center md:block md:grayscale" />
 
-					<h3 className="font-semibold text-sm">Ver todos os jogos</h3>
+					<h3 className="text-center font-semibold text-sm">
+						Ver todos os jogos
+					</h3>
 				</div>
 			</div>
 		</section>

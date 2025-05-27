@@ -19,7 +19,7 @@ export default function Menu() {
 
 	return (
 		<div className="absolute z-10 w-full border-white/10 border-b">
-			<header className="mx-auto flex h-[80px] max-w-global items-center justify-between px-sm md:h-[100px] md:px-md xl:px-xl 2xl:px-0">
+			<header className="mx-auto flex h-[80px] items-center justify-between px-sm md:h-[100px] md:px-md xl:max-w-xl xl:px-0 2xl:max-w-2xl">
 				<div className="flex items-center gap-28">
 					<a
 						href="#"
@@ -55,7 +55,7 @@ export default function Menu() {
 						/>
 					</div>
 
-					<MenuIcon className="hover:cursor-pointer xl:hidden" />
+					<MenuIcon className="self-center hover:cursor-pointer xl:hidden" />
 				</div>
 			</header>
 

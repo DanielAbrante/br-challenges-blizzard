@@ -8,10 +8,6 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			screens: {
-				xl: "1440px",
-				"2xl": "1920px",
-			},
 			colors: {
 				blue: "#00AEFF",
 				black: "#020203",
@@ -27,20 +23,21 @@ const config: Config = {
 				bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem)",
 			},
 			maxWidth: {
-				global: "1300px",
+				md: "675px",
+				xl: "1216px",
+				"2xl": "1300px",
 			},
 			padding: {
 				sm: "1.5rem",
-				md: "4rem",
+				md: "3rem",
 				xl: "7rem",
 				"2xl": "72rem",
 				galleryHeader: "clamp(3.5625rem, 3.1377rem + 1.8123vw, 5.3125rem)",
 			},
 			gridTemplateColumns: {
-				sm: "repeat(2, 10rem)",
-				md: "repeat(3, 12.5rem)",
-				xl: "repeat(4, 17.5rem)",
-				"2xl": "repeat(4, 18.5rem)",
+				sm: "repeat(auto-fit, minmax(8rem, 1fr))",
+				md: "repeat(auto-fit, minmax(12.5rem, 1fr))",
+				xl: "repeat(4, 1fr)",
 			},
 			backgroundImage: {
 				footerBackground: "url('/assets/footer-background.png')",
