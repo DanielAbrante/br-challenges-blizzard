@@ -12,6 +12,7 @@ export interface BannersProps {
 	logo: StaticImageData;
 	trailer: StaticImageData;
 	cover: StaticImageData;
+	hasPurchased: boolean;
 	isCenterPosition: boolean;
 }
 

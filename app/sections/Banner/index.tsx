@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 import type { BannersProps } from "@/app/interfaces/global";
+import PersonIcon from "@/public/assets/banner-hero/icons/person.svg";
 import { Button } from "../../components/Button";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
@@ -114,7 +115,14 @@ export default function Banner() {
 							<p className="mt-4 mb-8 text-lg md:max-w-full">
 								{banners[bannerIndex].description}
 							</p>
-							<Button text={"Jogue agora"} />
+							<Button
+								text={
+									banners[bannerIndex].hasPurchased
+										? "Jogue agora"
+										: "Reserve agora na pré-venda"
+								}
+								icon={PersonIcon}
+							/>
 						</div>
 
 						<BannerGameLogo ref={bannerGameLogoRef} />
