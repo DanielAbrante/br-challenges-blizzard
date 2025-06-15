@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/BUtton";
 import AppleIcon from "@/public/assets/banner-hero/icons/apple-icon.svg";
 import CloseModalIcon from "@/public/assets/banner-hero/icons/close-modal-icon.svg";
 import FacebookIcon from "@/public/assets/banner-hero/icons/facebook-icon.svg";

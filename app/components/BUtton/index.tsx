@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
-import type { SVGComponent } from "../interfaces/global";
+import type { SVGComponent } from "../../interfaces/global";
 
 interface ButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;

@@ -6,7 +6,7 @@ import ProfileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
 import { useRef } from "react";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/BUtton";
 import NavLink from "../../components/NavLink";
 import HeaderLoginModal from "./HeaderLoginModal";
 

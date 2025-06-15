@@ -20,7 +20,7 @@ import miniAppIlustration from "@/public/assets/ilustrations/app-mini.png";
 import appIlustration from "@/public/assets/ilustrations/app.png";
 
 import type { SVGComponent } from "@/app/interfaces/global";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/BUtton";
 
 type OperatingSystem = "Linux" | "Windows" | "Macintosh";
 
