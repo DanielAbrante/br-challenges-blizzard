@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 import type { BannersProps } from "@/app/interfaces/global";
 import PersonIcon from "@/public/assets/banner-hero/icons/person.svg";
-import { Button } from "../../components/BUtton";
+import { Button } from "../../components/Button";
 import BannerBackground from "./BannerBackground";
 import BannerGameIcons from "./BannerGameIcons";
 import { BannerGameLogo } from "./BannerGameLogo";

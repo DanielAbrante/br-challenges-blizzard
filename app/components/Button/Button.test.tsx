@@ -5,7 +5,7 @@ import { Button } from ".";
 describe("Button component", () => {
 	const buttonText = "Continuar";
 
-	it("should render button correctly", () => {
+	it("should render correctly", () => {
 		render(<Button text={buttonText} />);
 
 		const button = screen.getByRole("button");
@@ -19,7 +19,7 @@ describe("Button component", () => {
 		expect(screen.getByText(buttonText)).toBeInTheDocument();
 	});
 
-	it("should render button with outline variant", () => {
+	it("should render with outline variant", () => {
 		render(<Button text={buttonText} variant="outline" />);
 
 		const button = screen.getByRole("button");
@@ -27,7 +27,7 @@ describe("Button component", () => {
 		expect(button).toHaveClass("border");
 	});
 
-	it("should render button with semibold weight", () => {
+	it("should render with semibold weight", () => {
 		render(<Button text={buttonText} weight="semibold" />);
 
 		const button = screen.getByRole("button");
@@ -35,7 +35,7 @@ describe("Button component", () => {
 		expect(button).toHaveClass("font-semibold");
 	});
 
-	it("should render button with icon", () => {
+	it("should render with icon", () => {
 		const mockIcon = () => <svg role="img" />;
 
 		render(<Button text={buttonText} icon={mockIcon} />);
