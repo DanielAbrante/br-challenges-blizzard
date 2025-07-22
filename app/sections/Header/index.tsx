@@ -1,20 +1,55 @@
 "use client";
 
 import Dropdown from "@/app/components/Dropdown";
+import { MenuDrop } from "@/app/components/MenuDrop";
 import MenuIcon from "@/public/assets/banner-hero/icons/menu.svg";
 import ProfileIcon from "@/public/assets/banner-hero/icons/profile.svg";
 import logo from "@/public/assets/logo-blizzard.png";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../../components/Button";
 import NavLink from "../../components/NavLink";
+import FooterItem from "../Footer/FooterItem";
 import HeaderLoginModal from "./HeaderLoginModal";
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const activeMenuContent: any = {
+	games: {
+		main: <>sou games main</>,
+		footer: (
+			<>
+				<FooterItem title="Ver todos os jogos" icon={ProfileIcon} />
+				<FooterItem title="Aplicativo Battle.net" icon={ProfileIcon} />
+				<FooterItem title="Downloads" icon={ProfileIcon} />
+				<FooterItem title="Fóruns dos jogos" icon={ProfileIcon} />
+			</>
+		),
+	},
+	sports: {
+		main: <>sou sports main</>,
+		footer: (
+			<>
+				<FooterItem title="Torneios da comunidade" icon={ProfileIcon} />
+			</>
+		),
+	},
+};
 
 export default function Menu() {
 	const dialogRef = useRef<HTMLDialogElement | null>(null);
+	const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
 	const handleLoginClick = () => {
 		if (dialogRef) dialogRef.current?.showModal();
+	};
+
+	const handleDropDownClick = (contentType: string) => {
+		if (contentType === activeMenu) {
+			setActiveMenu(null);
+			return;
+		}
+
+		setActiveMenu(contentType);
 	};
 
 	return (
@@ -35,8 +70,18 @@ export default function Menu() {
 					{/* Above xl */}
 					<nav className="hidden xl:block">
 						<ul className="flex gap-8">
-							<Dropdown text="Jogos" href="#" />
-							<Dropdown text="Esportes" href="#" />
+							<Dropdown
+								text="Jogos"
+								href="#"
+								onClick={() => handleDropDownClick("games")}
+								isActive={activeMenu === "games"}
+							/>
+							<Dropdown
+								text="Esportes"
+								href="#"
+								onClick={() => handleDropDownClick("sports")}
+								isActive={activeMenu === "sports"}
+							/>
 							<NavLink text="Loja" href="#" />
 							<NavLink text="Notícias" href="#" />
 							<NavLink text="Suporte" href="#" />
@@ -58,6 +103,10 @@ export default function Menu() {
 					<MenuIcon className="self-center hover:cursor-pointer xl:hidden" />
 				</div>
 			</header>
+
+			{activeMenu && (
+				<MenuDrop content={activeMenu && activeMenuContent[activeMenu]} />
+			)}
 
 			<HeaderLoginModal ref={dialogRef} />
 		</div>

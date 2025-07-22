@@ -1,16 +1,17 @@
-import type { AnchorHTMLAttributes } from "react";
+import { type AnchorHTMLAttributes, useRef, useState } from "react";
+
+import DownArrow from "@/public/assets/banner-hero/icons/down-arrow.svg";
 
 interface DropdownProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	text: string;
+	isActive: boolean;
 }
 
-export default function Dropdown({ text, ...props }: DropdownProps) {
+export default function Dropdown({ text, isActive, ...props }: DropdownProps) {
 	return (
-		<a
-			className="flex gap-3 font-medium text-sm after:mt-[3px] after:size-2.5 after:rotate-45 after:border-white/60 after:border-r-2 after:border-b-2 hover:after:border-blue hover:after:duration-300"
-			{...props}
-		>
+		<a className="flex items-center gap-3 font-medium text-sm" {...props}>
 			{text}
+			{<DownArrow className={`${isActive && "-scale-100 text-blue"}`} />}
 		</a>
 	);
 }
