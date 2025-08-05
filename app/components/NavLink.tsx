@@ -5,9 +5,5 @@ interface NavLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export default function NavLink({ text, ...props }: NavLinkProps) {
-	return (
-		<a className="hover:text-blue" {...props}>
-			{text}
-		</a>
-	);
+	return <a {...props}>{text}</a>;
 }

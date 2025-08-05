@@ -89,7 +89,7 @@ export default function Banner() {
 	}, [isPlayingTrailer, isEndedAnimation, bannerIndex]);
 
 	return (
-		<section className="relative h-[625px] md:h-[736px]">
+		<section className="relative z-0 h-[625px] md:h-[736px]">
 			<BannerContext.Provider
 				value={{
 					bannerIndex: bannerIndex,

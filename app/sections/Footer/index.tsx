@@ -1,6 +1,6 @@
 "use client";
 
-import FooterItem from "./FooterItem";
+import ListItem from "../../components/ListItem";
 
 import BuyIcon from "@/public/assets/banner-hero/icons/buy.svg";
 import RectangleIcon from "@/public/assets/banner-hero/icons/rectangle.svg";
@@ -59,15 +59,12 @@ export default function Footer() {
 						Baixe agora o battle.net
 					</h2>
 					<ul className="mt-7 flex flex-col gap-6">
-						<FooterItem
-							icon={RectangleIcon}
-							title="Seus jogos em um só lugar"
-						/>
-						<FooterItem
+						<ListItem icon={RectangleIcon} title="Seus jogos em um só lugar" />
+						<ListItem
 							icon={ThreeCirclesIcon}
 							title="Conecte-se aos seus amigos"
 						/>
-						<FooterItem icon={BuyIcon} title="Compre jogos e itens digitais" />
+						<ListItem icon={BuyIcon} title="Compre jogos e itens digitais" />
 					</ul>
 					<div className="mt-10">
 						{operatingSystem ? (

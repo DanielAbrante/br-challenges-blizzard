@@ -7,7 +7,7 @@ import battleNetLogo from "@/public/assets/logo-battle-net.png";
 import Image from "next/image";
 import { type RefObject, forwardRef } from "react";
 
-const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
+export const LoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 	const handleCloseModalClick = () => {
 		const dialogRef = ref as RefObject<HTMLDialogElement>;
 
@@ -86,5 +86,3 @@ const HeaderLoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 		</dialog>
 	);
 });
-
-export default HeaderLoginModal;
