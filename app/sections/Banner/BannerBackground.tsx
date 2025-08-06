@@ -22,7 +22,7 @@ export default function BannerBackground() {
 
 			<motion.div
 				key={bannerIndex}
-				className="absolute bottom-0 h-[3px] bg-blue"
+				className="absolute bottom-0 h-[3px] bg-blue-100"
 				initial={{ width: 0 }}
 				animate={{ width: "100%" }}
 				transition={{

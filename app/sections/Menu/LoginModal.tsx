@@ -36,7 +36,7 @@ export const LoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 								name="email"
 								id="email"
 								placeholder="E-mail ou telefone"
-								className="w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-grayBold"
+								className="w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-gray-500"
 							/>
 						</p>
 
@@ -46,7 +46,7 @@ export const LoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 								name="password"
 								id="password"
 								placeholder="Senha"
-								className="mt-4 w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-grayBold"
+								className="mt-4 w-[26.625rem] rounded px-4 py-3 placeholder:font-thin placeholder:text-gray-500"
 							/>
 						</p>
 
@@ -58,27 +58,30 @@ export const LoginModal = forwardRef<HTMLDialogElement>((_, ref) => {
 					</h2>
 				</form>
 
-				<div className="flex flex-col items-center text-white">
+				<div className="flex flex-col items-center text-white-100">
 					<p>ou conecte-se com</p>
 					<ul className="mt-4 flex gap-4">
-						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
+						<li className="bg-white-100 p-3 hover:cursor-pointer hover:opacity-90">
 							<GoogleIcon />
 						</li>
-						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
+						<li className="bg-white-100 p-3 hover:cursor-pointer hover:opacity-90">
 							<AppleIcon />
 						</li>
-						<li className="bg-white p-3 hover:cursor-pointer hover:opacity-90">
+						<li className="bg-white-100 p-3 hover:cursor-pointer hover:opacity-90">
 							<FacebookIcon />
 						</li>
 					</ul>
 
 					<p className="mt-9">
-						<a href="" className="text-blue underline hover:brightness-150">
+						<a href="" className="text-blue-100 underline hover:brightness-150">
 							Crie uma conta
 						</a>{" "}
 						Battle.net de graça
 					</p>
-					<a className="mt-4 text-blue underline hover:brightness-150" href="#">
+					<a
+						className="mt-4 text-blue-100 underline hover:brightness-150"
+						href="#"
+					>
 						Não consegue logar?
 					</a>
 				</div>

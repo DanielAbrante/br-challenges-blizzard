@@ -22,11 +22,11 @@ export function Button({
 		<button
 			type="button"
 			className={clsx(
-				"rounded px-4 py-3 text-sm text-white",
+				"rounded px-4 py-3 text-sm text-white-100",
 				weight === "medium" ? "font-medium" : "font-semibold",
 				variant === "normal"
-					? "bg-blue hover:brightness-110"
-					: "border duration-200 hover:bg-white hover:text-black",
+					? "bg-blue-100 hover:brightness-110"
+					: "border duration-200 hover:bg-white-100 hover:text-black-500",
 				Icon && "flex items-center justify-center gap-2 px-8",
 				className,
 			)}

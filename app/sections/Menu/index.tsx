@@ -34,12 +34,12 @@ export default function Menu() {
 
 	return (
 		<MenuContext.Provider value={{ activeDropdown, setActiveDropdown }}>
-			<div className="absolute z-50 w-full border-white/10 border-b">
+			<div className="absolute z-50 w-full border-white-100/10 border-b">
 				<header className="mx-auto flex h-[80px] items-center justify-between px-sm md:h-[100px] md:px-md xl:max-w-xl xl:px-0 2xl:max-w-2xl">
 					<div className="flex items-center gap-28">
 						<a
 							href="#"
-							className="relative after:pointer-events-none after:absolute after:top-[50px] after:h-[2px] after:w-1/2 after:bg-blue after:duration-1000 hover:after:w-full md:after:top-[63px]"
+							className="relative after:pointer-events-none after:absolute after:top-[50px] after:h-[2px] after:w-1/2 after:bg-blue-100 after:duration-1000 hover:after:w-full md:after:top-[63px]"
 						>
 							<Image
 								src={logo}

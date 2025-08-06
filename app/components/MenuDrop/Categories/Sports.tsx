@@ -17,7 +17,7 @@ export const SportsMain = () => {
 							alt={sport.title}
 							className="group-hover:scale-110"
 						/>
-						<p className="max-w-32 text-center text-graySemiBold group-hover:text-white">
+						<p className="max-w-32 text-center text-gray-300 group-hover:text-white-100">
 							{sport.title}
 						</p>
 					</div>

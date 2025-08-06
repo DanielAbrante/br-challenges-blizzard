@@ -10,7 +10,7 @@ export default function GalleryHeader({
 }) {
 	return (
 		<div className="flex flex-wrap items-end justify-between gap-3 py-galleryHeader">
-			<h4 className="hidden self-start pt-2 font-semibold text-gray xl:block">
+			<h4 className="hidden self-start pt-2 font-semibold text-gray-400 xl:block">
 				Games
 			</h4>
 
@@ -24,7 +24,7 @@ export default function GalleryHeader({
 						<li key={platformIcon.id}>
 							<platformIcon.icon
 								onClick={() => setPlatform(platformIcon.id)}
-								className={`hover:cursor-pointer ${platformIcon.id === platform ? "text-blue hover:opacity-100" : "hover:opacity-70"} `}
+								className={`hover:cursor-pointer ${platformIcon.id === platform ? "text-blue-100 hover:opacity-100" : "hover:opacity-70"} `}
 							/>
 						</li>
 					))}
@@ -35,7 +35,10 @@ export default function GalleryHeader({
 				<div>
 					<DotsMenuIcon className="min-w-2" />
 				</div>
-				<a href="#" className="font-semibold text-blue text-sm md:text-base">
+				<a
+					href="#"
+					className="font-semibold text-blue-100 text-sm md:text-base"
+				>
 					Ver todos os jogos
 				</a>
 			</div>

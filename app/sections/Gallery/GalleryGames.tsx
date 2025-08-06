@@ -78,14 +78,14 @@ export default function GalleryGames({ platform }: { platform: number }) {
 							<h3 className="mt-5 hidden font-semibold text-lg md:block">
 								{game.name}
 							</h3>
-							<p className="mt-1 hidden text-grayLight text-sm md:block">
+							<p className="mt-1 hidden text-gray-100 text-sm md:block">
 								{game.category}
 							</p>
 						</div>
 					);
 				}
 			})}
-			<div className="flex h-52 flex-col items-center justify-center gap-4 border border-black300 md:h-72 xl:h-96">
+			<div className="flex h-52 flex-col items-center justify-center gap-4 border border-black-300 md:h-72 xl:h-96">
 				<Image src={logo} alt="Blizzard Company" />
 
 				<div className="flex gap-3">

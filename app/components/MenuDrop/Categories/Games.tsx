@@ -13,14 +13,14 @@ export const GamesMain = () => {
 				return (
 					<div
 						key={game.id}
-						className="group flex flex-col items-center gap-2 rounded p-7 hover:bg-black200"
+						className="group flex flex-col items-center gap-2 rounded p-7 hover:bg-black-400"
 					>
 						<Image
 							src={game.icon}
 							alt={game.title}
 							className="origin-bottom group-hover:scale-125"
 						/>
-						<p className="max-w-28 text-center text-graySemiBold text-sm group-hover:text-white">
+						<p className="max-w-28 text-center text-gray-300 text-sm group-hover:text-white-100">
 							{game.title}
 						</p>
 					</div>

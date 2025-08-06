@@ -86,7 +86,7 @@ export default function Footer() {
 
 					<div className="mt-10 flex items-center gap-4">
 						<PhoneIcon />
-						<p className="max-w-60 font-semibold text-grayLight text-sm">
+						<p className="max-w-60 font-semibold text-gray-100 text-sm">
 							Também disponível como{" "}
 							<a href="#" className="underline">
 								aplicativo móvel

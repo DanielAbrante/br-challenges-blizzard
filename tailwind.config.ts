@@ -7,21 +7,24 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		colors: {
+			"blue-100": "#00AEFF",
+
+			"black-500": "#020203",
+			"black-400": "#07070A",
+			"black-300": "#212428",
+			"black-200-alpha-90": "#0E1117E2",
+			"black-100": "#15171B",
+
+			"white-100": "#FFFFFF",
+
+			"gray-100": "#E5E5E5",
+			"gray-200": "#BCC0CA",
+			"gray-300": "#9D9D9D",
+			"gray-400": "#8F9199",
+			"gray-500": "#363842",
+		},
 		extend: {
-			colors: {
-				blue: "#00AEFF",
-				black: "#020203",
-				black200: "#07070A",
-				black300: "#212428",
-				black400: "#0E1117E2",
-				black500: "#15171B",
-				white: "#FFFFFF",
-				gray: "#8F9199",
-				graySemiBold: "#9D9D9D",
-				grayBold: "#363842",
-				graySemiLight: "#BCC0CA",
-				grayLight: "#E5E5E5",
-			},
 			fontSize: {
 				h2: "clamp(1.75rem, 1.5115rem + 1.0178vw, 2rem)",
 				bannerTitle: "clamp(2.5rem, 1rem + 6vw, 4rem)",
