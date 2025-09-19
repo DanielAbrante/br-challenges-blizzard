@@ -25,7 +25,7 @@ export interface PlatformIconsType {
 export interface gamesDataResponse {
 	name: string;
 	category: string;
-	image: string;
-	logo: string;
+	image: string | StaticImageData;
+	logo: string | StaticImageData;
 	platforms: string[];
 }

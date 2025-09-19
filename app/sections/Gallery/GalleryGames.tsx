@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import DotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
+import fallbackImg from "@/public/assets/fallback-image.jpg";
 import logo from "@/public/assets/logo-blizzard.png";
 
 import { useEffect, useState } from "react";
@@ -27,6 +28,9 @@ export default function GalleryGames({ platform }: { platform: number }) {
 
 				gamesData.forEach((game, index) => {
 					game.platforms = platformsPerGame[index];
+
+					game.image = fallbackImg;
+					game.logo = "";
 				});
 
 				setGamesList(gamesData);
@@ -64,16 +68,18 @@ export default function GalleryGames({ platform }: { platform: number }) {
 									sizes="(max-width: 768px) 8rem, (max-width: 1440px) 12.5rem, 17.5rem"
 								/>
 
-								<div className="absolute bottom-5 flex w-full justify-center md:bottom-8 lg:bottom-11">
-									<div className="relative h-[54px] w-[82px] md:h-[71px] md:w-[107px] xl:h-[98px] xl:w-[148px]">
-										<Image
-											src={game.logo}
-											alt={game.name}
-											fill
-											sizes="(max-width: 768px) 54px, (max-width: 1440px) 107px, 148px"
-										/>
+								{game.logo && (
+									<div className="absolute bottom-5 flex w-full justify-center md:bottom-8 lg:bottom-11">
+										<div className="relative h-[54px] w-[82px] md:h-[71px] md:w-[107px] xl:h-[98px] xl:w-[148px]">
+											<Image
+												src={game.logo}
+												alt={game.name}
+												fill
+												sizes="(max-width: 768px) 54px, (max-width: 1440px) 107px, 148px"
+											/>
+										</div>
 									</div>
-								</div>
+								)}
 							</div>
 							<h3 className="mt-5 hidden font-semibold text-lg md:block">
 								{game.name}
