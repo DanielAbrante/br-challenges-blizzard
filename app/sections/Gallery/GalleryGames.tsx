@@ -1,57 +1,14 @@
-"use client";
 import Image from "next/image";
 
 import DotsMenuIcon from "@/public/assets/banner-hero/icons/dots-menu.svg";
-import fallbackImg from "@/public/assets/fallback-image.jpg";
 import logo from "@/public/assets/logo-blizzard.png";
 
-import { useEffect, useState } from "react";
-import { Spinner } from "../../components/Spinner";
-import type { gamesDataResponse } from "../../interfaces/global";
-import { Platform, platformsPerGame } from "./galleryData";
+import { Platform, games } from "./galleryData";
 
 export default function GalleryGames({ platform }: { platform: number }) {
-	const [gamesList, setGamesList] = useState<gamesDataResponse[]>([]);
-
-	useEffect(() => {
-		async function fetchGamesList() {
-			try {
-				const url = "https://api-brchallenges.vercel.app/api/blizzard/games";
-
-				const response: Response = await fetch(url);
-
-				if (!response.ok) {
-					throw new Error(`Error: ${response.status}`);
-				}
-
-				const gamesData: gamesDataResponse[] = await response.json();
-
-				gamesData.forEach((game, index) => {
-					game.platforms = platformsPerGame[index];
-
-					game.image = fallbackImg;
-					game.logo = "";
-				});
-
-				setGamesList(gamesData);
-			} catch (error) {
-				console.error(
-					"Não foi possível carregar os jogos da galeria, erro: ",
-					error,
-				);
-			}
-		}
-
-		fetchGamesList();
-	}, []);
-
-	if (!gamesList || gamesList.length === 0) {
-		return <Spinner />;
-	}
-
 	return (
 		<section className="grid grid-cols-sm justify-center gap-x-4 gap-y-6 md:grid-cols-md md:gap-x-8 md:gap-y-10 xl:grid-cols-xl xl:gap-y-12 2xl:grid-cols-2xl">
-			{gamesList.map((game) => {
+			{games.map((game) => {
 				if (
 					game.platforms.some(
 						(gamePlatform) => gamePlatform === Platform[platform],
@@ -63,7 +20,6 @@ export default function GalleryGames({ platform }: { platform: number }) {
 								<Image
 									src={game.image}
 									alt={game.name}
-									fill
 									className="origin-bottom transition-transform duration-300 hover:scale-110"
 									sizes="(max-width: 768px) 8rem, (max-width: 1440px) 12.5rem, 17.5rem"
 								/>

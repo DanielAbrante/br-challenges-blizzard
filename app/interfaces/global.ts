@@ -22,7 +22,8 @@ export interface PlatformIconsType {
 	alt: string;
 }
 
-export interface gamesDataResponse {
+export interface Games {
+	id: number;
 	name: string;
 	category: string;
 	image: string | StaticImageData;
